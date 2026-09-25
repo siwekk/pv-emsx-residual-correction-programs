@@ -94,14 +94,21 @@ def configure_trainable(module: Moirai2Module, scope: str) -> list[str]:
     return selected
 
 
-def adaptation_windows(records: list[dict], context_length: int) -> list[dict]:
+def adaptation_windows(
+    records: list[dict],
+    context_length: int,
+    prediction_length: int = ADAPTATION_PREDICTION_LENGTH,
+    offsets: tuple[int, ...] = (0, 32),
+) -> list[dict]:
     windows = []
     for record in records:
         target = np.concatenate([record["history_target"], record["actual"]])
         vendor = np.concatenate([record["history_vendor"], record["future_vendor"]])
-        for offset in (0, 32):
+        for offset in offsets:
             future_start = offset + context_length
-            future_end = future_start + ADAPTATION_PREDICTION_LENGTH
+            future_end = future_start + prediction_length
+            if future_end > len(target):
+                raise ValueError("Adaptation window extends beyond the available target")
             windows.append(
                 {
                     "history_target": target[offset:future_start].astype(np.float32),
@@ -215,18 +222,26 @@ def fit_module(
     batch_size: int,
     validation_interval: int,
     seed: int = SEED,
+    adaptation_prediction_length: int = ADAPTATION_PREDICTION_LENGTH,
+    adaptation_window_offsets: tuple[int, ...] = (0, 32),
 ) -> tuple[Moirai2Module, dict]:
     selected_names = configure_trainable(module, spec["trainable_scope"])
     trainable = [parameter for parameter in module.parameters() if parameter.requires_grad]
     trainable_count = sum(parameter.numel() for parameter in trainable)
     total_count = sum(parameter.numel() for parameter in module.parameters())
-    training_windows = adaptation_windows(training_records, context_length)
-    validation_windows = adaptation_windows(validation_records, context_length)
+    training_windows = adaptation_windows(
+        training_records, context_length,
+        adaptation_prediction_length, adaptation_window_offsets,
+    )
+    validation_windows = adaptation_windows(
+        validation_records, context_length,
+        adaptation_prediction_length, adaptation_window_offsets,
+    )
     forecast = make_forecast(
         module,
         context_length,
         with_vendor,
-        ADAPTATION_PREDICTION_LENGTH,
+        adaptation_prediction_length,
     )
     optimizer = torch.optim.AdamW(
         trainable,
@@ -303,8 +318,8 @@ def fit_module(
         "trainable_parameters": trainable_count,
         "total_parameters": total_count,
         "trainable_parameter_names": selected_names,
-        "adaptation_prediction_length": ADAPTATION_PREDICTION_LENGTH,
-        "adaptation_window_offsets": [0, 32],
+        "adaptation_prediction_length": adaptation_prediction_length,
+        "adaptation_window_offsets": list(adaptation_window_offsets),
         "training_windows": len(training_windows),
         "validation_windows": len(validation_windows),
         "validation_history": history,

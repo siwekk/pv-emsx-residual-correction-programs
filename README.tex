@@ -55,6 +55,33 @@ bash scripts/run_emsx_frozen_confirmation_server.sh
 
 The launcher saves per run summaries, predictions, and checkpoints only under \verb|EMSX_OUTPUT_ROOT|. It resumes completed fits. The final summary uses every seed. The original test period informed configuration selection, so the test comparison should be interpreted descriptively. Calibration was not used to choose these configurations.
 
+To compare the frozen forecasts at each delivery step, run the following analysis. Its tables and figure are written outside this repository.
+
+\begin{verbatim}
+"$EMSX_WORK_ROOT/.venv-core/bin/python" \
+  scripts/analyse_emsx_foundation_step_errors.py \
+  --protocol protocols/emsx_frozen_fewshot_repeats_20260924.json \
+  --run-root "$EMSX_OUTPUT_ROOT" \
+  --output-root "$EMSX_WORK_ROOT/foundation-step-analysis"
+\end{verbatim}
+
+\section*{Moirai horizon and residual diagnostic}
+
+The separate protocol \verb|emsx_moirai_96_residual_20260925.json| tests four arms with eight fixed seeds. It compares direct photovoltaic targets and residuals relative to the issued vendor forecast, each with and without a separate vendor covariate channel. All arms use a 96 step adaptation loss. The released recursive decoder modifies its scale in place, which prevents gradients through the predictions fed back as context. The diagnostic therefore stops gradients through those feedback values while leaving the forward predictions unchanged. It is an exploratory adaptation method, not the unmodified released training procedure. Keep all generated files outside this Git repository.
+
+\begin{verbatim}
+"$MOIRAI_PYTHON" scripts/run_emsx_moirai_96_residual.py \
+  --protocol protocols/emsx_moirai_96_residual_20260925.json \
+  --curve-root "$EMSX_CURVE_ROOT" --raw-root "$EMSX_RAW_ROOT" \
+  --output-root "$EMSX_WORK_ROOT/moirai-96"
+"$EMSX_WORK_ROOT/.venv-core/bin/python" \
+  scripts/analyse_emsx_moirai_96_residual.py \
+  --protocol protocols/emsx_moirai_96_residual_20260925.json \
+  --new-run-root "$EMSX_WORK_ROOT/moirai-96" \
+  --frozen-run-root "$EMSX_OUTPUT_ROOT" \
+  --output-root "$EMSX_WORK_ROOT/moirai-96-analysis"
+\end{verbatim}
+
 \section*{Independent checks}
 
 The following program reads externally stored prediction files, recomputes every reported metric, checks delivery keys, verifies model revisions and seeds against the frozen protocol, and confirms that the calibration and test profiles do not overlap. It exits with a nonzero status when a check fails.
