@@ -1,0 +1,15 @@
+# Only source code, environment specifications, and the frozen protocol belong here.
+/*
+!/scripts/
+!/protocols/
+!/requirements.txt
+!/requirements-chronos.txt
+!/requirements-moirai.txt
+!/README.tex
+!/.gitignore
+
+/scripts/*
+!/scripts/*.py
+!/scripts/*.sh
+/protocols/*
+!/protocols/*.json

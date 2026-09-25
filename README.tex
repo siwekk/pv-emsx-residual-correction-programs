@@ -1,0 +1,71 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\begin{document}
+
+\section*{EMSx reproducibility programs}
+
+This local Git repository contains source programs, dependency specifications, and the frozen experiment protocol. It contains no manuscript, data, predictions, model checkpoints, calculated results, tables, or figures. Keep all inputs and generated files in a separate working directory. The public EMSx release is identified by \url{https://doi.org/10.5281/zenodo.5510400}.
+
+\section*{Working directory and core environment}
+
+The commands below are intended for a Linux compute host. Set the working directory to a location outside this repository. Programs with explicit input and output arguments accept any external paths. Older programs that use the common directory layout read \verb|EMSX_WORK_ROOT| and default to a sibling directory named \verb|pv-emsx-residual-correction-work|.
+
+\begin{verbatim}
+export EMSX_WORK_ROOT=/absolute/path/to/emsx-work
+mkdir -p "$EMSX_WORK_ROOT"
+python3 -m venv "$EMSX_WORK_ROOT/.venv-core"
+"$EMSX_WORK_ROOT/.venv-core/bin/python" -m pip install -r requirements.txt
+"$EMSX_WORK_ROOT/.venv-core/bin/python" scripts/download_emsx.py
+"$EMSX_WORK_ROOT/.venv-core/bin/python" scripts/build_emsx_daily_curves.py \
+  --raw-root "$EMSX_WORK_ROOT/data/raw/emsx" \
+  --output-root "$EMSX_WORK_ROOT/data/processed/emsx/daily_curves" \
+  --manifest "$EMSX_WORK_ROOT/results/emsx_daily_curves_manifest.json"
+\end{verbatim}
+
+The download program verifies every EMSx file against the checksums supplied by the Zenodo record. The curve builder creates the daily sample and its chronological partitions. It writes only to the external working directory in this example.
+
+\section*{Conventional comparisons}
+
+The repository includes the vendor forecast, persistence, seasonal naive, ARIMA, LightGBM, random forest, XGBoost, neural network, and probabilistic evaluation programs. The following commands show the daily sample baseline and residual LightGBM calculations. The remaining programs expose their inputs through \verb|--help| or use \verb|EMSX_WORK_ROOT|.
+
+\begin{verbatim}
+"$EMSX_WORK_ROOT/.venv-core/bin/python" scripts/run_emsx_daily_baselines.py \
+  --curve-root "$EMSX_WORK_ROOT/data/processed/emsx/daily_curves" \
+  --prediction-output "$EMSX_WORK_ROOT/predictions/daily_baselines.parquet" \
+  --summary-output "$EMSX_WORK_ROOT/results/daily_baselines.json"
+"$EMSX_WORK_ROOT/.venv-core/bin/python" scripts/run_emsx_daily_lightgbm.py \
+  --curve-root "$EMSX_WORK_ROOT/data/processed/emsx/daily_curves" \
+  --prediction-output "$EMSX_WORK_ROOT/predictions/daily_lightgbm.parquet" \
+  --summary-output "$EMSX_WORK_ROOT/results/daily_lightgbm.json"
+\end{verbatim}
+
+\section*{Chronos 2 and Moirai 2 repetitions}
+
+Use separate Python environments for the two foundation models. The corresponding requirement files record the package versions used for the experiments. Install a PyTorch build suitable for the available accelerator if the default wheel does not match the host. Cache the exact model revisions named in the protocol before running the programs, since inference and adaptation load the models from the local cache. The frozen protocol specifies 32 seeds, two input variants for each model, calibration as the additional temporal evaluation, and a separate test evaluation. Do not select a favorable seed after inspecting outcomes.
+
+\begin{verbatim}
+export CHRONOS_PYTHON=/absolute/path/to/chronos-venv/bin/python
+export MOIRAI_PYTHON=/absolute/path/to/moirai-venv/bin/python
+export EMSX_RAW_ROOT="$EMSX_WORK_ROOT/data/raw/emsx"
+export EMSX_CURVE_ROOT="$EMSX_WORK_ROOT/data/processed/emsx/daily_curves"
+export EMSX_OUTPUT_ROOT="$EMSX_WORK_ROOT/frozen-confirmation"
+bash scripts/run_emsx_frozen_confirmation_server.sh
+\end{verbatim}
+
+The launcher saves per run summaries, predictions, and checkpoints only under \verb|EMSX_OUTPUT_ROOT|. It resumes completed fits. The final summary uses every seed. The original test period informed configuration selection, so the test comparison should be interpreted descriptively. Calibration was not used to choose these configurations.
+
+\section*{Independent checks}
+
+The following program reads externally stored prediction files, recomputes every reported metric, checks delivery keys, verifies model revisions and seeds against the frozen protocol, and confirms that the calibration and test profiles do not overlap. It exits with a nonzero status when a check fails.
+
+\begin{verbatim}
+"$EMSX_WORK_ROOT/.venv-core/bin/python" scripts/verify_frozen_results.py \
+  --protocol protocols/emsx_frozen_fewshot_repeats_20260924.json \
+  --run-root "$EMSX_OUTPUT_ROOT" \
+  --output "$EMSX_WORK_ROOT/results/frozen-verification.json"
+\end{verbatim}
+
+The programs \verb|audit_emsx_daily_point_predictions.py| and \verb|audit_reproducibility.py| provide additional checks for saved predictions and the earlier EMSx forecast contract. Their output paths should likewise point outside this repository. No files are uploaded by these programs or by this repository setup.
+
+\end{document}

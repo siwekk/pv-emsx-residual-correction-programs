@@ -1,0 +1,38 @@
+{
+  "protocol_version": 1,
+  "frozen_utc": "2026-09-24T19:39:00Z",
+  "purpose": "Repeat the four previously selected EMSx few shot settings without additional hyperparameter selection. The previous final test selection is descriptive; calibration is an additional temporal evaluation partition that was not used to fit or select these foundation model settings.",
+  "selection_source": "results/emsx_daily_fewshot_comparison.json",
+  "seeds": [20261001, 20261002, 20261003, 20261004, 20261005, 20261006, 20261007, 20261008, 20261009, 20261010, 20261011, 20261012, 20261013, 20261014, 20261015, 20261016, 20261017, 20261018, 20261019, 20261020, 20261021, 20261022, 20261023, 20261024, 20261025, 20261026, 20261027, 20261028, 20261029, 20261030, 20261031, 20261032],
+  "context_length": 672,
+  "forecast_steps": 96,
+  "adaptation_profiles_per_site": 7,
+  "training_partition": "train",
+  "checkpoint_selection_partition": "tuning",
+  "primary_evaluation_partition": "calibration",
+  "secondary_evaluation_partition": "test",
+  "primary_metric": "pooled_median_mae_kwh",
+  "additional_metrics": ["equal_system_median_mae_kwh", "weighted_interval_score_kwh", "central_90_interval_coverage"],
+  "comparisons": ["vendor forecast on both evaluation partitions", "corresponding zero shot model on the previously reported test partition", "residual LightGBM on the previously reported test partition"],
+  "chronos2": {
+    "model_id": "amazon/chronos-2",
+    "model_revision": "29ec3766d36d6f73f0696f85560a422f50e8498c",
+    "specification": {"days": 7, "learning_rate": 0.00003, "rank": 8, "steps": 300},
+    "variants": ["target_only", "vendor_covariate"],
+    "validation_profiles_per_site": 3,
+    "training_batch_size": 32,
+    "inference_batch_size": 128,
+    "inference_chunk_size": 256
+  },
+  "moirai2": {
+    "model_id": "Salesforce/moirai-2.0-R-small",
+    "model_revision": "30f43ff08c8494f4943ae1521e9d4e94a0fbb389",
+    "specification": {"days": 7, "learning_rate": 0.00001, "trainable_scope": "full", "steps": 200},
+    "variants": ["target_only", "vendor_covariate"],
+    "validation_profiles_per_site": 1,
+    "validation_interval": 50,
+    "training_batch_size": 16,
+    "inference_batch_size": 64
+  },
+  "analysis_policy": "Report every seed, failures, mean and standard deviation across seeds, and empirical 2.5 and 97.5 percentiles. Do not choose a winning seed. Compare paired seeds within each model and input contract. Keep the manuscript unchanged until results are reviewed."
+}
