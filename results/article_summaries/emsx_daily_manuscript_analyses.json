@@ -1,0 +1,209 @@
+{
+  "created_utc": "2026-09-06T22:24:13.81942+02:00",
+  "started_utc": "2026-09-06T22:22:03.940511+02:00",
+  "command": "[runtime command omitted]",
+  "seed": 20260906,
+  "software": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "pandas": "3.0.5"
+  },
+  "sample": {
+    "delivery_rows": 854208,
+    "curves": 8898,
+    "systems": 70
+  },
+  "point_metrics": {
+    "Vendor": {
+      "pooled_mae_kwh": 71.33744083130635,
+      "equal_system_mae_kwh": 63.2373577247392,
+      "normalized_mae": 0.06016560822531152
+    },
+    "Residual LightGBM": {
+      "pooled_mae_kwh": 52.182449840016304,
+      "equal_system_mae_kwh": 44.82789531362894,
+      "normalized_mae": 0.042420088692846275
+    },
+    "Seasonal naive": {
+      "pooled_mae_kwh": 92.65801367368616,
+      "equal_system_mae_kwh": 81.5248696393952,
+      "normalized_mae": 0.07419225804021766
+    },
+    "Persistence": {
+      "pooled_mae_kwh": 248.36920950870862,
+      "equal_system_mae_kwh": 219.162415074751,
+      "normalized_mae": 0.20732575457876184
+    },
+    "ARIMA": {
+      "pooled_mae_kwh": 111.46782446809668,
+      "equal_system_mae_kwh": 99.15925303750339,
+      "normalized_mae": 0.10158518789454991
+    },
+    "Chronos-2 target-only": {
+      "pooled_mae_kwh": 81.13137090468561,
+      "equal_system_mae_kwh": 71.77303097878428,
+      "normalized_mae": 0.06678915500004882
+    },
+    "Chronos-2 + vendor": {
+      "pooled_mae_kwh": 62.380520092653086,
+      "equal_system_mae_kwh": 55.12832996777057,
+      "normalized_mae": 0.052079131755639656
+    },
+    "Moirai 2.0 target-only": {
+      "pooled_mae_kwh": 99.80072679091865,
+      "equal_system_mae_kwh": 88.39414101418356,
+      "normalized_mae": 0.08447896230516287
+    },
+    "Moirai 2.0 + vendor": {
+      "pooled_mae_kwh": 126.05513366749588,
+      "equal_system_mae_kwh": 112.02278591806561,
+      "normalized_mae": 0.11023686535343583
+    }
+  },
+  "hierarchical_bootstrap": {
+    "LightGBM versus vendor": {
+      "equal_system_mae_reduction_kwh": 18.409462411110255,
+      "ci95_low_kwh": 6.585405802990748,
+      "ci95_high_kwh": 38.90275964221231,
+      "draws": 2000,
+      "seed": 20260906
+    },
+    "Chronos-2 + vendor versus vendor": {
+      "equal_system_mae_reduction_kwh": 8.109027756968626,
+      "ci95_low_kwh": 2.9765608897583107,
+      "ci95_high_kwh": 18.23328392244653,
+      "draws": 2000,
+      "seed": 20260906
+    },
+    "LightGBM versus Chronos-2 + vendor": {
+      "equal_system_mae_reduction_kwh": 10.300434654141624,
+      "ci95_low_kwh": 3.5123367881627936,
+      "ci95_high_kwh": 21.043289918043108,
+      "draws": 2000,
+      "seed": 20260906
+    }
+  },
+  "probabilistic_metrics": {
+    "Chronos-2 target-only": {
+      "median_mae_kwh": 81.13137090468561,
+      "mean_pinball_kwh": 27.469226248371566,
+      "grid_crps_kwh": 55.545263018817735,
+      "wis_kwh": 77.01155223844108,
+      "coverage_90": 0.9362625964636248,
+      "width_90_kwh": 309.406904984241
+    },
+    "Chronos-2 + vendor": {
+      "median_mae_kwh": 62.380520092653086,
+      "mean_pinball_kwh": 22.67494126907335,
+      "grid_crps_kwh": 44.9754813586412,
+      "wis_kwh": 57.94431965596209,
+      "coverage_90": 0.8638481493968682,
+      "width_90_kwh": 165.45023652816005
+    },
+    "Moirai 2.0 target-only": {
+      "median_mae_kwh": 99.80072679091865,
+      "mean_pinball_kwh": 33.14989094809111,
+      "grid_crps_kwh": 67.34228046704565,
+      "wis_kwh": 92.71284899527781,
+      "coverage_90": 0.9442583071102121,
+      "width_90_kwh": 376.2786162907869
+    },
+    "Moirai 2.0 + vendor": {
+      "median_mae_kwh": 126.05513366749588,
+      "mean_pinball_kwh": 42.27328184859989,
+      "grid_crps_kwh": 85.90461843682196,
+      "wis_kwh": 114.29087255100089,
+      "coverage_90": 0.9093358994530606,
+      "width_90_kwh": 397.5022166189979
+    }
+  },
+  "complete_context_probabilistic_metrics": {
+    "Chronos-2 target-only": {
+      "median_mae_kwh": 82.08877502323932,
+      "mean_pinball_kwh": 27.79352960174273,
+      "grid_crps_kwh": 56.201087892005916,
+      "wis_kwh": 77.92403530968535,
+      "coverage_90": 0.9365286633268814,
+      "width_90_kwh": 313.12378583452096
+    },
+    "Chronos-2 + vendor": {
+      "median_mae_kwh": 63.110014926769736,
+      "mean_pinball_kwh": 22.938017395429664,
+      "grid_crps_kwh": 45.49859714899266,
+      "wis_kwh": 58.621176291964765,
+      "coverage_90": 0.8638574993358382,
+      "width_90_kwh": 167.43344636434333
+    },
+    "Moirai 2.0 target-only": {
+      "median_mae_kwh": 100.94277155315869,
+      "mean_pinball_kwh": 33.52836463561431,
+      "grid_crps_kwh": 68.11136567229144,
+      "wis_kwh": 93.77962799473593,
+      "coverage_90": 0.9448710102850203,
+      "width_90_kwh": 380.7506170157923
+    },
+    "Moirai 2.0 + vendor": {
+      "median_mae_kwh": 127.49099616812792,
+      "mean_pinball_kwh": 42.75995401000911,
+      "grid_crps_kwh": 86.89269619471098,
+      "wis_kwh": 115.60996762384725,
+      "coverage_90": 0.9096597593836578,
+      "width_90_kwh": 402.19832289222694
+    }
+  },
+  "excluded_incomplete_context_curves": 115,
+  "conditional_gain": {
+    "vendor_energy": [
+      {
+        "bin": "Q1",
+        "vendor_mae": 10.08611919245513,
+        "lightgbm_mae": 5.48959011850974,
+        "reduction": 4.596529073945389
+      },
+      {
+        "bin": "Q2",
+        "vendor_mae": 20.140933388133064,
+        "lightgbm_mae": 14.926905835805153,
+        "reduction": 5.214027552327911
+      },
+      {
+        "bin": "Q3",
+        "vendor_mae": 25.97101157859432,
+        "lightgbm_mae": 18.727849874102827,
+        "reduction": 7.243161704491495
+      },
+      {
+        "bin": "Q4",
+        "vendor_mae": 229.10830009337056,
+        "lightgbm_mae": 169.55367369166092,
+        "reduction": 59.55462640170964
+      }
+    ],
+    "vendor_ramp": [
+      {
+        "bin": "Q1",
+        "vendor_mae": 8.352925130096306,
+        "lightgbm_mae": 4.736887271214012,
+        "reduction": 3.6160378588822937
+      },
+      {
+        "bin": "Q2",
+        "vendor_mae": 18.691185198745583,
+        "lightgbm_mae": 13.904523465622832,
+        "reduction": 4.786661733122751
+      },
+      {
+        "bin": "Q3",
+        "vendor_mae": 26.81357463018969,
+        "lightgbm_mae": 19.324185602321865,
+        "reduction": 7.489389027867826
+      },
+      {
+        "bin": "Q4",
+        "vendor_mae": 231.44840640132475,
+        "lightgbm_mae": 170.7322316992831,
+        "reduction": 60.716174702041656
+      }
+    ]
+  }
+}

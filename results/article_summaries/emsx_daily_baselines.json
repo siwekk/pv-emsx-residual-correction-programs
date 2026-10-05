@@ -1,0 +1,42 @@
+{
+  "dataset": "EMSx daily complete 96-step curves",
+  "started_utc": "2026-09-06T17:26:27.554032+02:00",
+  "completed_utc": "2026-09-06T17:26:30.51105+02:00",
+  "command": "[runtime command omitted]",
+  "source": "[runtime path or credential omitted]",
+  "sample": "Common complete test curves issued at 00:00 UTC.",
+  "random_seed": null,
+  "software": {
+    "python": "3.12.3",
+    "numpy": "1.26.4"
+  },
+  "metrics": {
+    "vendor": {
+      "delivery_rows": 854208,
+      "curves": 8898,
+      "systems": 70,
+      "pooled_mae_kwh": 71.33744083130635,
+      "equal_curve_mae_kwh": 71.33744083130635,
+      "equal_system_mae_kwh": 63.2373577247392,
+      "training_scale_normalized_mae": 0.06016560822531152
+    },
+    "persistence": {
+      "delivery_rows": 854208,
+      "curves": 8898,
+      "systems": 70,
+      "pooled_mae_kwh": 248.36920950870862,
+      "equal_curve_mae_kwh": 248.36920950870862,
+      "equal_system_mae_kwh": 219.162415074751,
+      "training_scale_normalized_mae": 0.20732575457876184
+    },
+    "seasonal_naive": {
+      "delivery_rows": 854208,
+      "curves": 8898,
+      "systems": 70,
+      "pooled_mae_kwh": 92.65801367368616,
+      "equal_curve_mae_kwh": 92.6580136736862,
+      "equal_system_mae_kwh": 81.5248696393952,
+      "training_scale_normalized_mae": 0.07419225804021766
+    }
+  }
+}

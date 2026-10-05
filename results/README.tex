@@ -1,0 +1,12 @@
+\section*{Aggregate results}
+
+This directory contains numerical summaries and figures from the EMSx photovoltaic forecasting study. The files are provided to check the reported comparisons without distributing raw measurements, full per profile forecasts, or model weights.
+
+\begin{description}
+\item[\texttt{article\_summaries/}] Per model metric summaries for conventional, probabilistic, foundation model, robustness, and ablation analyses. Local paths and command lines are omitted.
+\item[\texttt{frozen/}] Frozen baseline summaries and seed level metrics for the 32 seed Chronos 2 and Moirai comparison.
+\item[\texttt{moirai\_diagnostics/}] Seed level absolute errors at each delivery step for the original 32 seed runs, with the summary table and figure.
+\item[\texttt{moirai\_96/}] Seed level and delivery step summaries for the 96 step direct and residual experiment, with its comparison figure.
+\end{description}
+
+Source data are available from Zenodo at \url{https://doi.org/10.5281/zenodo.5510400}. The scripts and frozen protocols are stored in the parent repository. Full predictions and model checkpoints are generated outside the repository when the experiments are run.

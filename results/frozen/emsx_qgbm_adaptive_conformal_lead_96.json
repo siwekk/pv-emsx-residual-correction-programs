@@ -1,0 +1,13 @@
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "method": "Daily-updated rolling split conformal with a 30-day per-site residual window. For every forecast day, only residuals whose outcomes would be known before the beginning of that day after the 24-hour lead are used.",
+  "interval_nominal_coverage": 0.9,
+  "test": {
+    "rows": 851958,
+    "coverage": 0.9006605959448705,
+    "mean_width_kwh": 288.56507647180194,
+    "mean_interval_score_kwh": 597.6165355703603,
+    "median_calibration_count": 2881
+  }
+}

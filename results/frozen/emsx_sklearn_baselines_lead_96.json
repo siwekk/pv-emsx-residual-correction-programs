@@ -1,0 +1,17 @@
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "feature_contract": "Vendor forecast, 16 preceding 15-minute PV values, UTC calendar features, and site identity. All models use the same chronological 70/10/20 split and shared test observations.",
+  "random_forest": {
+    "training_rows": 400000,
+    "trees": 160,
+    "minimum_leaf": 20
+  },
+  "test_rows": 851958,
+  "mae_kwh": {
+    "vendor": 71.17096854832738,
+    "persistence": 92.08825878274071,
+    "ridge": 67.52492102523208,
+    "random_forest": 61.20950180479937
+  }
+}

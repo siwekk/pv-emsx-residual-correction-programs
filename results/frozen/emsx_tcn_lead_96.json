@@ -1,0 +1,18 @@
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "device": "cuda",
+  "feature_contract": "16 preceding 15-minute observed PV values, vendor forecast, UTC calendar features, and site embedding",
+  "splitting": "Per-site chronological 70/10/20 train/validation/test split.",
+  "fit": {
+    "best_validation_mae_norm": 0.053870704963620675,
+    "train_rows": 2980646,
+    "validation_rows": 425940,
+    "test_rows": 851958
+  },
+  "test": {
+    "mae_kwh": 62.945878125767166,
+    "vendor_mae_kwh": 71.17096854832738,
+    "mae_improvement_pct": 11.556805521025204
+  }
+}

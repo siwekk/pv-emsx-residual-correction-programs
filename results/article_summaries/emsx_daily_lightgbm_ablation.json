@@ -1,0 +1,124 @@
+{
+  "dataset": "EMSx daily complete 96-step curves",
+  "started_utc": "2026-09-07T07:13:49.805877+02:00",
+  "completed_utc": "2026-09-07T07:22:05.879017+02:00",
+  "command": "[runtime command omitted]",
+  "source": "[runtime path or credential omitted]",
+  "method": "Fixed-configuration feature ablations of the selected residual LightGBM",
+  "selection": "The hyperparameters and 4000-tree fit are inherited from the primary model selected before test evaluation. No ablation was tuned on test data.",
+  "random_seed": 20260906,
+  "parameters": {
+    "objective": "regression_l1",
+    "n_estimators": 4000,
+    "learning_rate": 0.02,
+    "num_leaves": 255,
+    "min_child_samples": 100,
+    "colsample_bytree": 0.9,
+    "subsample": 0.85,
+    "reg_lambda": 2.0,
+    "reg_alpha": 0.05,
+    "n_jobs": 24,
+    "verbosity": -1,
+    "random_state": 20260906
+  },
+  "models": {
+    "target_step": {
+      "features": [
+        "forecast_norm",
+        "delivery_step",
+        "lead_sin",
+        "lead_cos",
+        "valid_doy_sin",
+        "valid_doy_cos",
+        "site_id"
+      ],
+      "fit_seconds": 197.9025241942145,
+      "inference_seconds": 25.606138505972922,
+      "test": {
+        "delivery_rows": 854208,
+        "curves": 8898,
+        "systems": 70,
+        "pooled_mae_kwh": 67.78117108244531,
+        "equal_curve_mae_kwh": 67.78117108244533,
+        "equal_system_mae_kwh": 58.57954114335504,
+        "training_scale_normalized_mae": 0.05303563847064338
+      },
+      "feature_importance_gain": {
+        "forecast_norm": 186547524.08286905,
+        "delivery_step": 47470490.73974943,
+        "lead_sin": 16186230.891370296,
+        "lead_cos": 19570874.03248787,
+        "valid_doy_sin": 57498321.38028526,
+        "valid_doy_cos": 42051942.770159245,
+        "site_id": 47907440.82471371
+      }
+    },
+    "issued_curve": {
+      "features": [
+        "forecast_norm",
+        "delivery_step",
+        "lead_sin",
+        "lead_cos",
+        "valid_doy_sin",
+        "valid_doy_cos",
+        "site_id",
+        "curve_anchor_00_norm",
+        "curve_anchor_03_norm",
+        "curve_anchor_07_norm",
+        "curve_anchor_15_norm",
+        "curve_anchor_31_norm",
+        "curve_anchor_47_norm",
+        "curve_anchor_63_norm",
+        "curve_anchor_79_norm",
+        "curve_anchor_95_norm",
+        "curve_mean_kwh_norm",
+        "curve_std_kwh_norm",
+        "curve_max_kwh_norm",
+        "curve_energy_kwh_norm",
+        "curve_max_abs_ramp_kwh_norm",
+        "curve_peak_step_norm"
+      ],
+      "fit_seconds": 242.30178495962173,
+      "inference_seconds": 24.944164695218205,
+      "test": {
+        "delivery_rows": 854208,
+        "curves": 8898,
+        "systems": 70,
+        "pooled_mae_kwh": 52.816100710070465,
+        "equal_curve_mae_kwh": 52.816100710070465,
+        "equal_system_mae_kwh": 45.37352337992363,
+        "training_scale_normalized_mae": 0.04306454352687371
+      },
+      "feature_importance_gain": {
+        "forecast_norm": 176525233.86695862,
+        "delivery_step": 53784753.013196945,
+        "lead_sin": 14655563.21470642,
+        "lead_cos": 13452067.136377335,
+        "valid_doy_sin": 16004595.947562218,
+        "valid_doy_cos": 14092971.000364304,
+        "site_id": 29524955.902043343,
+        "curve_anchor_00_norm": 10632166.003870964,
+        "curve_anchor_03_norm": 5568331.88122654,
+        "curve_anchor_07_norm": 3232806.071460724,
+        "curve_anchor_15_norm": 21918231.952305794,
+        "curve_anchor_31_norm": 8933277.905608177,
+        "curve_anchor_47_norm": 6569857.747647285,
+        "curve_anchor_63_norm": 9887847.850530624,
+        "curve_anchor_79_norm": 7449561.973970413,
+        "curve_anchor_95_norm": 11322678.433377266,
+        "curve_mean_kwh_norm": 5002798.568284988,
+        "curve_std_kwh_norm": 4338660.416799545,
+        "curve_max_kwh_norm": 5083767.931877136,
+        "curve_energy_kwh_norm": 1389197.758406639,
+        "curve_max_abs_ramp_kwh_norm": 9409534.852056503,
+        "curve_peak_step_norm": 6540471.157820702
+      }
+    }
+  },
+  "software": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "pandas": "3.0.5",
+    "lightgbm": "4.5.0"
+  }
+}

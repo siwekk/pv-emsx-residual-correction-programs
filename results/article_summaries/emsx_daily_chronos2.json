@@ -1,0 +1,57 @@
+{
+  "dataset": "EMSx daily complete 96-step curves",
+  "started_utc": "2026-09-06T17:46:37.74708+02:00",
+  "completed_utc": "2026-09-06T17:50:39.411824+02:00",
+  "command": "[runtime command omitted]",
+  "source_curves": "[runtime path or credential omitted]",
+  "source_raw": "[runtime path or credential omitted]",
+  "method": "Chronos-2 zero-shot probabilistic forecasting",
+  "model_id": "amazon/chronos-2",
+  "model_revision": "29ec3766d36d6f73f0696f85560a422f50e8498c",
+  "chronos_version": "2.3.1",
+  "torch_version": "2.13.0+cu126",
+  "device": "NVIDIA GeForce RTX 3090",
+  "context_length": 672,
+  "prediction_length": 96,
+  "quantiles": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    0.95
+  ],
+  "target_only_contract": "Causal PV target history only.",
+  "vendor_covariate_contract": "Causal PV target history and historical one-step vendor forecasts, with the issued 96-step vendor curve as a known future covariate.",
+  "task_specific_training": false,
+  "random_seed": null,
+  "variants": {
+    "target_only": {
+      "file": "artifacts_local/predictions/emsx_daily_chronos2_target_only.parquet",
+      "runtime_seconds": 53.56638638395816,
+      "metrics": {
+        "delivery_rows": 854208,
+        "curves": 8898,
+        "systems": 70,
+        "median_mae_kwh": 81.1693627700699,
+        "training_scale_normalized_mae": 0.0668202073891753
+      }
+    },
+    "vendor_covariate": {
+      "file": "artifacts_local/predictions/emsx_daily_chronos2_vendor_covariate.parquet",
+      "runtime_seconds": 66.99794281693175,
+      "metrics": {
+        "delivery_rows": 854208,
+        "curves": 8898,
+        "systems": 70,
+        "median_mae_kwh": 62.40591255666649,
+        "training_scale_normalized_mae": 0.052101180799566264
+      }
+    }
+  }
+}

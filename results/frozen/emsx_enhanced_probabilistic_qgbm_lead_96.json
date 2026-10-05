@@ -1,0 +1,25 @@
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "method": "Enhanced residual quantile QGBM with daily-updated, 30-day causal adaptive conformal calibration",
+  "feature_contract": "Final enhanced forecast-curve residual-QGBM feature set.",
+  "split": "65 percent training, 5 percent tuning, 10 percent calibration, 20 percent test per site.",
+  "rows": {
+    "train": 2767639,
+    "tuning": 213007,
+    "calibration": 425940,
+    "test": 851958
+  },
+  "raw_test": {
+    "mae_kwh": 54.46488171637637,
+    "coverage": 0.6699978167937856,
+    "mean_width_kwh": 136.01425100801129,
+    "interval_score_kwh": 399.31049510393336
+  },
+  "adaptive_test": {
+    "mae_kwh": 54.46488171637637,
+    "coverage": 0.8916448932928619,
+    "mean_width_kwh": 188.5361915263261,
+    "interval_score_kwh": 340.6647564105547
+  }
+}

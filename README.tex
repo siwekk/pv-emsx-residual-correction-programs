@@ -5,7 +5,7 @@
 
 \section*{EMSx reproducibility programs}
 
-This local Git repository contains source programs, dependency specifications, and the frozen experiment protocol. It contains no manuscript, data, predictions, model checkpoints, calculated results, tables, or figures. Keep all inputs and generated files in a separate working directory. The public EMSx release is identified by \url{https://doi.org/10.5281/zenodo.5510400}.
+This Git repository contains source programs, dependency specifications, frozen experiment protocols, and selected aggregate results. It contains no manuscript, raw EMSx data, per profile prediction files, or model checkpoints. Keep model inputs and generated run files in a separate working directory. The included result summaries omit local paths and commands. The public EMSx release is identified by \url{https://doi.org/10.5281/zenodo.5510400}.
 
 \section*{Working directory and core environment}
 
@@ -93,6 +93,12 @@ The following program reads externally stored prediction files, recomputes every
   --output "$EMSX_WORK_ROOT/results/frozen-verification.json"
 \end{verbatim}
 
-The programs \verb|audit_emsx_daily_point_predictions.py| and \verb|audit_reproducibility.py| provide additional checks for saved predictions and the earlier EMSx forecast contract. Their output paths should likewise point outside this repository. No files are uploaded by these programs or by this repository setup.
+The programs \verb|audit_emsx_daily_point_predictions.py| and \verb|audit_reproducibility.py| provide additional checks for saved predictions and the earlier EMSx forecast contract. Their output paths should likewise point outside this repository. The analysis programs do not transfer data to a remote service.
+
+\section*{Included aggregate results}
+
+The \verb|results/article_summaries| directory contains compact metric summaries for the point, probabilistic, robustness, and benchmark analyses. The \verb|results/frozen| directory contains the frozen baseline summaries and the 32 seed foundation model comparison. The \verb|results/moirai_diagnostics| directory contains stepwise errors for the original 32 seed forecasts. The \verb|results/moirai_96| directory contains all seed level and delivery step summaries for the eight seed horizon and residual comparison, together with its figure. These are aggregate outputs for checking the claims and rebuilding the displayed comparisons. Runtime paths and command lines have been removed from the JSON summaries.
+
+The repository excludes source measurements, full per profile forecasts, and model checkpoints. The latter prediction files and checkpoints occupied about 3.3 GB for the 96 step diagnostic alone. The scripts can regenerate these files when run with the EMSx data and the specified model checkpoints.
 
 \end{document}

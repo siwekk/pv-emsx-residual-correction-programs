@@ -1,0 +1,8 @@
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "method": "Per-site SARIMA(2,0,1)(1,0,0)24 baseline",
+  "restriction": "Hourly origins only, 100 evenly spaced causal forecast origins per site. This is a classical reference, not a row-for-row 15-minute comparison.",
+  "test_rows": 7000,
+  "mae_kwh": 174.54332343336657
+}

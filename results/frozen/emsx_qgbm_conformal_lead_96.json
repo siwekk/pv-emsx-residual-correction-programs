@@ -1,0 +1,23 @@
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "method": "QGBM point correction with held-out split conformal intervals",
+  "feature_contract": "vendor forecast, 16 available 15-minute PV values, UTC calendar features, and a categorical site identifier",
+  "split": "Per site: 65 percent training, 5 percent tuning, 10 percent calibration, and final 20 percent test.",
+  "interval_nominal_coverage": 0.9,
+  "conformal_normalized_half_width": 0.14045903548417457,
+  "fit": {
+    "best_iteration": 1200,
+    "train": 2767639,
+    "tuning": 213007,
+    "calibration": 425940,
+    "test": 851958
+  },
+  "test": {
+    "mae_kwh": 64.23853308423291,
+    "vendor_mae_kwh": 71.17096854832738,
+    "coverage": 0.8750853915333855,
+    "mean_width_kwh": 225.85751350255723,
+    "mean_interval_score_kwh": 655.4258748548617
+  }
+}

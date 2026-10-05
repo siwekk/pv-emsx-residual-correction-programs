@@ -1,0 +1,16 @@
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "device": "cuda",
+  "feature_contract": "Vendor forecast, 16 preceding 15-minute PV values, UTC calendar features, and site embedding. Same chronological split and shared test observations as QGBM and TCN.",
+  "test_rows": 851958,
+  "mae_kwh": {
+    "vendor": 71.17096854832738,
+    "mlp": 63.993768646120756,
+    "lstm": 64.92623689854877
+  },
+  "validation_mae_normalized": {
+    "mlp": 0.049971691174043,
+    "lstm": 0.052072059529966304
+  }
+}

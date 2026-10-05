@@ -1,0 +1,94 @@
+{
+  "dataset": "EMSx daily complete 96-step curves",
+  "started_utc": "2026-09-06T21:36:22.207457+02:00",
+  "completed_utc": "2026-09-06T22:20:33.293275+02:00",
+  "command": "[runtime command omitted]",
+  "method": "Global residual quantile LightGBM with increasing rearrangement and causal rolling quantile calibration",
+  "selection_contract": "Point-model structure selected on training and tuning only. The same structure and iteration count are frozen for all quantiles. Calibration is first accessed after fitting.",
+  "calibration_contract": "For each system, delivery step, and quantile, use normalized errors from the preceding 30 days whose valid times are no later than the new issue time.",
+  "quantiles": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    0.95
+  ],
+  "iterations": 4000,
+  "window_days": 30,
+  "seed": 20260906,
+  "rows": {
+    "training": 2753472,
+    "tuning": 213312,
+    "calibration": 424416,
+    "test": 854208
+  },
+  "fit_runtime_seconds_by_quantile": {
+    "0.05": 377.4747098069638,
+    "0.1": 385.6115256808698,
+    "0.2": 469.65538210608065,
+    "0.3": 398.9550769459456,
+    "0.4": 387.3909508208744,
+    "0.5": 386.2857133229263,
+    "0.6": 392.39029163727537,
+    "0.7": 387.63100445317104,
+    "0.8": 387.03382679633796,
+    "0.9": 339.02144584804773,
+    "0.95": 337.8949687341228
+  },
+  "raw_test": {
+    "median_mae_kwh": 52.08038424708568,
+    "mean_pinball_kwh": 19.57912600904663,
+    "grid_crps_kwh": 38.62166490055585,
+    "wis_kwh": 48.910718623827385,
+    "coverage_90": 0.8274916647935866,
+    "width_90_kwh": 129.84764520774627,
+    "interval_score_90_kwh": 389.8602738464132,
+    "observed_quantile_frequencies": {
+      "0.05": 0.5570118753277891,
+      "0.1": 0.5829493519142879,
+      "0.2": 0.6131691578631903,
+      "0.3": 0.6420824904472915,
+      "0.4": 0.6732926874953173,
+      "0.5": 0.7061851446017832,
+      "0.6": 0.7390026785045328,
+      "0.7": 0.7707865063310108,
+      "0.8": 0.8056983779126395,
+      "0.9": 0.8557903929722035,
+      "0.95": 0.9066140799430583
+    }
+  },
+  "causally_calibrated_test": {
+    "median_mae_kwh": 50.991953479056335,
+    "mean_pinball_kwh": 17.837117502679522,
+    "grid_crps_kwh": 35.84920958049128,
+    "wis_kwh": 49.24497204888561,
+    "coverage_90": 0.9187621750206039,
+    "width_90_kwh": 191.60664629765841,
+    "interval_score_90_kwh": 288.3115512550344,
+    "observed_quantile_frequencies": {
+      "0.05": 0.5326864182962463,
+      "0.1": 0.5578489079943059,
+      "0.2": 0.6047391267700607,
+      "0.3": 0.6510006930396344,
+      "0.4": 0.6986296077770285,
+      "0.5": 0.7454683168502285,
+      "0.6": 0.7934226792537649,
+      "0.7": 0.838994717914138,
+      "0.8": 0.8853909118153892,
+      "0.9": 0.9323221042181764,
+      "0.95": 0.9624623042631303
+    }
+  },
+  "software": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "pandas": "3.0.5",
+    "lightgbm": "4.5.0"
+  }
+}

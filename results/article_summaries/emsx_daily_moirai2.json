@@ -1,0 +1,58 @@
+{
+  "dataset": "EMSx daily complete 96-step curves",
+  "started_utc": "2026-09-06T17:52:08.281894+02:00",
+  "completed_utc": "2026-09-06T17:55:49.672115+02:00",
+  "command": "[runtime command omitted]",
+  "source_curves": "[runtime path or credential omitted]",
+  "source_raw": "[runtime path or credential omitted]",
+  "method": "Moirai 2.0 zero-shot probabilistic forecasting",
+  "model_id": "Salesforce/moirai-2.0-R-small",
+  "model_revision": "30f43ff08c8494f4943ae1521e9d4e94a0fbb389",
+  "uni2ts_version": "2.0.0",
+  "gluonts_version": "0.14.4",
+  "torch_version": "2.4.1+cu124",
+  "device": "NVIDIA GeForce RTX 3090",
+  "context_length": 672,
+  "prediction_length": 96,
+  "quantiles": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    0.95
+  ],
+  "target_only_contract": "Causal PV target history only.",
+  "vendor_covariate_contract": "Causal PV target history and historical one-step vendor forecasts, with the issued curve as a known future dynamic covariate; a binary missingness covariate accompanies historical vendor values.",
+  "task_specific_training": false,
+  "random_seed": null,
+  "variants": {
+    "target_only": {
+      "file": "artifacts_local/predictions/emsx_daily_moirai2_target_only.parquet",
+      "runtime_seconds": 34.37262641591951,
+      "metrics": {
+        "delivery_rows": 854208,
+        "curves": 8898,
+        "systems": 70,
+        "median_mae_kwh": 99.76923743525496,
+        "training_scale_normalized_mae": 0.08444355379830007
+      }
+    },
+    "vendor_covariate": {
+      "file": "artifacts_local/predictions/emsx_daily_moirai2_vendor_covariate.parquet",
+      "runtime_seconds": 57.878558047581464,
+      "metrics": {
+        "delivery_rows": 854208,
+        "curves": 8898,
+        "systems": 70,
+        "median_mae_kwh": 126.0547170624429,
+        "training_scale_normalized_mae": 0.11023719456782217
+      }
+    }
+  }
+}

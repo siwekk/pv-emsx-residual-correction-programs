@@ -1,0 +1,32 @@
+{
+  "dataset": "EMSx",
+  "horizon_hours": 24.0,
+  "matched_rows": 851958,
+  "sites": 70,
+  "method": "Hierarchical bootstrap of site-day mean errors, resampling sites and then days within sites, 2,000 draws.",
+  "mean_errors_kwh": {
+    "vendor_abs_error": 71.17096854832738,
+    "qgbm_abs_error": 64.16966470347512,
+    "tcn_abs_error": 62.94587812576716,
+    "qgbm_gain_kwh": 7.0013038448522344,
+    "tcn_gain_vs_qgbm_kwh": 1.2237865777079788,
+    "tcn_gain_vs_vendor_kwh": 8.225090422560218
+  },
+  "bootstrap_kwh": {
+    "qgbm_gain_kwh": {
+      "mean": 7.196007104766551,
+      "ci95_low": 2.5998686725324136,
+      "ci95_high": 15.702107946067011
+    },
+    "tcn_gain_vs_qgbm_kwh": {
+      "mean": 1.1005497032578708,
+      "ci95_low": -2.1889976820052213,
+      "ci95_high": 7.400621049368521
+    },
+    "tcn_gain_vs_vendor_kwh": {
+      "mean": 8.29655680802442,
+      "ci95_low": 3.0067257571790185,
+      "ci95_high": 19.60590679886727
+    }
+  }
+}

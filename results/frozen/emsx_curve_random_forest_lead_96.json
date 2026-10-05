@@ -1,0 +1,14 @@
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "method": "Random-forest residual corrector with matched enhanced feature contract",
+  "training_rows": 400000,
+  "test": {
+    "rows": 851958,
+    "mae_kwh": 59.55978330867046,
+    "nmae_q995": 0.047685684294584564,
+    "vendor_mae_kwh": 71.17096854832738,
+    "vendor_nmae_q995": 0.060346152667030147,
+    "mae_improvement_pct": 16.314496593892148
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "generated_utc": "2026-09-25T01:09:17.863132+02:00",
+  "planned_seeds_per_setting": 32,
+  "expected_fits": 128,
+  "completed_fits": 128,
+  "missing_identifiers": [],
+  "vendor_mae_kwh": {
+    "calibration": 74.7559307169525,
+    "test": 71.33744083130635
+  },
+  "aggregate": {
+    "chronos2/target_only/calibration": {
+      "pooled_median_mae_kwh": {
+        "count": 32,
+        "mean": 77.27824315061923,
+        "standard_deviation": 0.3270929516739217,
+        "minimum": 76.59020760873787,
+        "median": 77.25674763961948,
+        "maximum": 78.04116622215068,
+        "seed_percentile_2_5": 76.73848973004192,
+        "seed_percentile_97_5": 77.90811116885216
+      },
+      "equal_system_median_mae_kwh": {
+        "count": 32,
+        "mean": 68.93267410513923,
+        "standard_deviation": 0.2688803977718639,
+        "minimum": 68.38483188526433,
+        "median": 68.92671388832946,
+        "maximum": 69.54397712856695,
+        "seed_percentile_2_5": 68.50456082612179,
+        "seed_percentile_97_5": 69.4538220442946
+      },
+      "weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 70.73122810618841,
+        "standard_deviation": 0.23051177809419549,
+        "minimum": 70.3283421641692,
+        "median": 70.68384983410544,
+        "maximum": 71.33672536426458,
+        "seed_percentile_2_5": 70.35428895258273,
+        "seed_percentile_97_5": 71.2245019092685
+      },
+      "central_90_interval_coverage": {
+        "count": 32,
+        "mean": 0.9187340663405715,
+        "standard_deviation": 0.0033373028247323092,
+        "minimum": 0.9124443941792958,
+        "median": 0.9190664348186685,
+        "maximum": 0.9245999208323908,
+        "seed_percentile_2_5": 0.9124644806039357,
+        "seed_percentile_97_5": 0.92451409701802
+      },
+      "vendor_mae_kwh": 74.7559307169525,
+      "mean_improvement_over_vendor_kwh": -2.522312433666727
+    },
+    "chronos2/target_only/test": {
+      "pooled_median_mae_kwh": {
+        "count": 32,
+        "mean": 78.27816555187599,
+        "standard_deviation": 0.2932724754188781,
+        "minimum": 77.86592963506502,
+        "median": 78.18736126438327,
+        "maximum": 79.29717223048827,
+        "seed_percentile_2_5": 77.88328116105782,
+        "seed_percentile_97_5": 78.84092340875391
+      },
+      "equal_system_median_mae_kwh": {
+        "count": 32,
+        "mean": 69.2195930384159,
+        "standard_deviation": 0.2586073395176896,
+        "minimum": 68.85215188993723,
+        "median": 69.14063981744079,
+        "maximum": 70.11479884454135,
+        "seed_percentile_2_5": 68.85220366741791,
+        "seed_percentile_97_5": 69.72231663721384
+      },
+      "weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 73.56716785202687,
+        "standard_deviation": 0.2206456296822894,
+        "minimum": 73.14916454431835,
+        "median": 73.54765981510546,
+        "maximum": 74.27351996533767,
+        "seed_percentile_2_5": 73.17657903267983,
+        "seed_percentile_97_5": 73.98286603424745
+      },
+      "central_90_interval_coverage": {
+        "count": 32,
+        "mean": 0.9236752787377314,
+        "standard_deviation": 0.003225941659126107,
+        "minimum": 0.9165531111860343,
+        "median": 0.9240155793436727,
+        "maximum": 0.9292994212182513,
+        "seed_percentile_2_5": 0.9179430536824754,
+        "seed_percentile_97_5": 0.9292295611841612
+      },
+      "vendor_mae_kwh": 71.33744083130635,
+      "mean_improvement_over_vendor_kwh": -6.940724720569634
+    },
+    "chronos2/vendor_covariate/calibration": {
+      "pooled_median_mae_kwh": {
+        "count": 32,
+        "mean": 49.210418190838496,
+        "standard_deviation": 0.20085192813679026,
+        "minimum": 48.87854712789803,
+        "median": 49.19695542808326,
+        "maximum": 49.638020133242435,
+        "seed_percentile_2_5": 48.909700994929054,
+        "seed_percentile_97_5": 49.62052517705018
+      },
+      "equal_system_median_mae_kwh": {
+        "count": 32,
+        "mean": 44.94378716163207,
+        "standard_deviation": 0.16507905286020141,
+        "minimum": 44.68804954104131,
+        "median": 44.92974085325773,
+        "maximum": 45.30097065444873,
+        "seed_percentile_2_5": 44.690970526953016,
+        "seed_percentile_97_5": 45.28285984622997
+      },
+      "weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 46.789885411395645,
+        "standard_deviation": 0.24177117295094094,
+        "minimum": 46.42333766432552,
+        "median": 46.774729928895084,
+        "maximum": 47.381824284008175,
+        "seed_percentile_2_5": 46.480305728047874,
+        "seed_percentile_97_5": 47.340413968243
+      },
+      "central_90_interval_coverage": {
+        "count": 32,
+        "mean": 0.8925508816821233,
+        "standard_deviation": 0.005687646672438587,
+        "minimum": 0.8831311731885697,
+        "median": 0.8929658636809168,
+        "maximum": 0.9088135225816181,
+        "seed_percentile_2_5": 0.8833265593191586,
+        "seed_percentile_97_5": 0.9040256493628892
+      },
+      "vendor_mae_kwh": 74.7559307169525,
+      "mean_improvement_over_vendor_kwh": 25.54551252611401
+    },
+    "chronos2/vendor_covariate/test": {
+      "pooled_median_mae_kwh": {
+        "count": 32,
+        "mean": 61.34064211924807,
+        "standard_deviation": 0.11473735473204526,
+        "minimum": 61.13413521228912,
+        "median": 61.332344563186425,
+        "maximum": 61.60769236685509,
+        "seed_percentile_2_5": 61.148617438889836,
+        "seed_percentile_97_5": 61.544262604076955
+      },
+      "equal_system_median_mae_kwh": {
+        "count": 32,
+        "mean": 54.142455342370496,
+        "standard_deviation": 0.09905192936286106,
+        "minimum": 53.964693439060625,
+        "median": 54.136699694055636,
+        "maximum": 54.37224437952167,
+        "seed_percentile_2_5": 53.96905380088257,
+        "seed_percentile_97_5": 54.31788190131091
+      },
+      "weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 57.96117231347696,
+        "standard_deviation": 0.15521531731554333,
+        "minimum": 57.67826538595746,
+        "median": 57.942306750900656,
+        "maximum": 58.390712145700604,
+        "seed_percentile_2_5": 57.710169602519805,
+        "seed_percentile_97_5": 58.30229751593507
+      },
+      "central_90_interval_coverage": {
+        "count": 32,
+        "mean": 0.905493890246872,
+        "standard_deviation": 0.005228174880435851,
+        "minimum": 0.8970730782198246,
+        "median": 0.9053503362178766,
+        "maximum": 0.9200885498613921,
+        "seed_percentile_2_5": 0.8976981894339552,
+        "seed_percentile_97_5": 0.9159477551135087
+      },
+      "vendor_mae_kwh": 71.33744083130635,
+      "mean_improvement_over_vendor_kwh": 9.996798712058279
+    },
+    "moirai2/target_only/calibration": {
+      "pooled_median_mae_kwh": {
+        "count": 32,
+        "mean": 76.85484550751349,
+        "standard_deviation": 1.445873432873576,
+        "minimum": 74.58057884164539,
+        "median": 76.65176953981802,
+        "maximum": 79.88931630562931,
+        "seed_percentile_2_5": 74.67198753856093,
+        "seed_percentile_97_5": 79.66242653504607
+      },
+      "equal_system_median_mae_kwh": {
+        "count": 32,
+        "mean": 69.08342974928254,
+        "standard_deviation": 1.282178123160106,
+        "minimum": 67.04335204774335,
+        "median": 68.86327608951942,
+        "maximum": 71.65389285441138,
+        "seed_percentile_2_5": 67.12316932742674,
+        "seed_percentile_97_5": 71.60798092990751
+      },
+      "weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 71.49804674358683,
+        "standard_deviation": 1.3087410429545883,
+        "minimum": 69.30985519953715,
+        "median": 71.45088907860736,
+        "maximum": 75.38686703407127,
+        "seed_percentile_2_5": 69.39876853968254,
+        "seed_percentile_97_5": 74.05266078511006
+      },
+      "central_90_interval_coverage": {
+        "count": 32,
+        "mean": 0.8524216953413633,
+        "standard_deviation": 0.01820180849397264,
+        "minimum": 0.8154546482696222,
+        "median": 0.8532183046821986,
+        "maximum": 0.8866348111287039,
+        "seed_percentile_2_5": 0.8193952395762648,
+        "seed_percentile_97_5": 0.8811968681670813
+      },
+      "vendor_mae_kwh": 74.7559307169525,
+      "mean_improvement_over_vendor_kwh": -2.0989147905609826
+    },
+    "moirai2/target_only/test": {
+      "pooled_median_mae_kwh": {
+        "count": 32,
+        "mean": 88.84145025738087,
+        "standard_deviation": 2.695642410778382,
+        "minimum": 83.50154910597723,
+        "median": 88.78091467125415,
+        "maximum": 93.52986494285332,
+        "seed_percentile_2_5": 83.65332574471933,
+        "seed_percentile_97_5": 93.50099420438973
+      },
+      "equal_system_median_mae_kwh": {
+        "count": 32,
+        "mean": 78.67870576301945,
+        "standard_deviation": 2.4303167820052574,
+        "minimum": 73.90949850873396,
+        "median": 78.53363483305932,
+        "maximum": 82.97674303649028,
+        "seed_percentile_2_5": 74.04363845753747,
+        "seed_percentile_97_5": 82.935816872077
+      },
+      "weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 81.33250784738243,
+        "standard_deviation": 2.151974089858328,
+        "minimum": 76.77799273098255,
+        "median": 81.15360262125071,
+        "maximum": 85.05181560525527,
+        "seed_percentile_2_5": 77.29647518035001,
+        "seed_percentile_97_5": 84.68338685099907
+      },
+      "central_90_interval_coverage": {
+        "count": 32,
+        "mean": 0.8797703179436389,
+        "standard_deviation": 0.015091023173279296,
+        "minimum": 0.8507962931744961,
+        "median": 0.8832497471341875,
+        "maximum": 0.9130832303139282,
+        "seed_percentile_2_5": 0.8525591249438076,
+        "seed_percentile_97_5": 0.9034761147167902
+      },
+      "vendor_mae_kwh": 71.33744083130635,
+      "mean_improvement_over_vendor_kwh": -17.504009426074518
+    },
+    "moirai2/vendor_covariate/calibration": {
+      "pooled_median_mae_kwh": {
+        "count": 32,
+        "mean": 81.13300263570187,
+        "standard_deviation": 1.7571527335644146,
+        "minimum": 77.97085810116205,
+        "median": 80.94681943811261,
+        "maximum": 85.44422829100482,
+        "seed_percentile_2_5": 78.22092926868314,
+        "seed_percentile_97_5": 84.13655984080074
+      },
+      "equal_system_median_mae_kwh": {
+        "count": 32,
+        "mean": 72.6547257670843,
+        "standard_deviation": 1.545327728704259,
+        "minimum": 70.01212404728392,
+        "median": 72.5180072246089,
+        "maximum": 76.70713112864931,
+        "seed_percentile_2_5": 70.27692893230115,
+        "seed_percentile_97_5": 75.49010270553934
+      },
+      "weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 75.60485912259887,
+        "standard_deviation": 1.5361709032472004,
+        "minimum": 73.22906482602997,
+        "median": 75.58901768040357,
+        "maximum": 78.36726983840661,
+        "seed_percentile_2_5": 73.33463874860496,
+        "seed_percentile_97_5": 78.09100435813797
+      },
+      "central_90_interval_coverage": {
+        "count": 32,
+        "mean": 0.8578203637468899,
+        "standard_deviation": 0.028337971374960365,
+        "minimum": 0.8139726117771243,
+        "median": 0.851091853276031,
+        "maximum": 0.9302995174545728,
+        "seed_percentile_2_5": 0.8155430049762498,
+        "seed_percentile_97_5": 0.9244178471122672
+      },
+      "vendor_mae_kwh": 74.7559307169525,
+      "mean_improvement_over_vendor_kwh": -6.377071918749365
+    },
+    "moirai2/vendor_covariate/test": {
+      "pooled_median_mae_kwh": {
+        "count": 32,
+        "mean": 87.56604893632036,
+        "standard_deviation": 2.745116369481938,
+        "minimum": 83.62943643061621,
+        "median": 87.4014107889116,
+        "maximum": 96.17183969643452,
+        "seed_percentile_2_5": 83.73573405878135,
+        "seed_percentile_97_5": 94.48249462896807
+      },
+      "equal_system_median_mae_kwh": {
+        "count": 32,
+        "mean": 77.7183902101352,
+        "standard_deviation": 2.42223355292933,
+        "minimum": 74.27726030095906,
+        "median": 77.64028247131623,
+        "maximum": 85.38020624553366,
+        "seed_percentile_2_5": 74.4154976338223,
+        "seed_percentile_97_5": 83.78104837776213
+      },
+      "weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 81.49557702239983,
+        "standard_deviation": 1.8832574132830808,
+        "minimum": 78.57519835470906,
+        "median": 81.39544324898418,
+        "maximum": 87.33874682311885,
+        "seed_percentile_2_5": 78.94991278074907,
+        "seed_percentile_97_5": 86.4484425310136
+      },
+      "central_90_interval_coverage": {
+        "count": 32,
+        "mean": 0.8728033745879225,
+        "standard_deviation": 0.025322513249938866,
+        "minimum": 0.8333017251067656,
+        "median": 0.8682036459504008,
+        "maximum": 0.9351797220349142,
+        "seed_percentile_2_5": 0.8355726298512774,
+        "seed_percentile_97_5": 0.9302949632876302
+      },
+      "vendor_mae_kwh": 71.33744083130635,
+      "mean_improvement_over_vendor_kwh": -16.228608105014004
+    }
+  },
+  "interpretation": "Seed percentiles describe variation across random initializations and training batches. They are not confidence intervals for unseen sites or future periods. The original test period informed configuration selection; calibration did not."
+}

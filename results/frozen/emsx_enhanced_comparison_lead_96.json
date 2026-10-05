@@ -1,0 +1,13 @@
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "matched_rows": 851958,
+  "sites": 70,
+  "qgbm_mae_kwh": 53.87758558895272,
+  "random_forest_mae_kwh": 59.55978330867046,
+  "qgbm_advantage_kwh": {
+    "mean": 5.676462751422392,
+    "ci95_low": 1.3424883232076232,
+    "ci95_high": 14.88567114224789
+  }
+}

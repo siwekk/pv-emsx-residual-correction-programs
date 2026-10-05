@@ -1,4 +1,4 @@
-# Only source code, environment specifications, and the frozen protocol belong here.
+# Source code, frozen protocols, and selected aggregate results belong here.
 /*
 !/scripts/
 !/protocols/
@@ -7,6 +7,26 @@
 !/requirements-moirai.txt
 !/README.tex
 !/.gitignore
+!/results/
+
+/results/*
+!/results/README.tex
+!/results/article_summaries/
+!/results/frozen/
+!/results/moirai_diagnostics/
+!/results/moirai_96/
+
+/results/article_summaries/*
+!/results/article_summaries/*.json
+/results/frozen/*
+!/results/frozen/*.json
+!/results/frozen/*.csv
+/results/moirai_diagnostics/*
+!/results/moirai_diagnostics/*.csv
+!/results/moirai_diagnostics/*.pdf
+/results/moirai_96/*
+!/results/moirai_96/*.csv
+!/results/moirai_96/*.pdf
 
 /scripts/*
 !/scripts/*.py

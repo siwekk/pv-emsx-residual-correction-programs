@@ -1,0 +1,49 @@
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "matched_rows": 851958,
+  "sites": 70,
+  "method": "Hierarchical bootstrap of site-day mean absolute-error differences, resampling sites and days within sites, 2,000 draws.",
+  "mae_kwh": {
+    "vendor": 71.17096854832738,
+    "persistence": 92.08825878274071,
+    "ridge": 67.52492102523208,
+    "random_forest": 61.20950180479937,
+    "mlp": 63.993768646120756,
+    "lstm": 64.92623689854878,
+    "tcn": 62.94587812576716,
+    "qgbm": 64.16966470347512
+  },
+  "random_forest_advantage_kwh": {
+    "random_forest_gain_vs_vendor_kwh": {
+      "mean": 10.126737516719622,
+      "ci95_low": 3.490161396666823,
+      "ci95_high": 22.35041753452209
+    },
+    "random_forest_gain_vs_ridge_kwh": {
+      "mean": 6.456002163609315,
+      "ci95_low": 2.0429206491551026,
+      "ci95_high": 14.184311036015243
+    },
+    "random_forest_gain_vs_mlp_kwh": {
+      "mean": 2.780962946926098,
+      "ci95_low": 0.5737934518484992,
+      "ci95_high": 6.669402648237732
+    },
+    "random_forest_gain_vs_lstm_kwh": {
+      "mean": 3.6779463879103425,
+      "ci95_low": 0.8012723175374522,
+      "ci95_high": 9.198315115671614
+    },
+    "random_forest_gain_vs_tcn_kwh": {
+      "mean": 1.8301807086951971,
+      "ci95_low": -1.0398007987559503,
+      "ci95_high": 4.921288828927405
+    },
+    "random_forest_gain_vs_qgbm_kwh": {
+      "mean": 2.9307304119530664,
+      "ci95_low": 0.628746167590901,
+      "ci95_high": 8.486152199359106
+    }
+  }
+}

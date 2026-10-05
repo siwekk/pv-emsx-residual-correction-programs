@@ -1,0 +1,19 @@
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "device": "cuda",
+  "method": "GRU residual corrector",
+  "feature_contract": "Identical enhanced forecast-curve information set used by tuned QGBM.",
+  "fit": {
+    "best_validation_mae_normalized": 0.048689887586006925,
+    "epochs": 20
+  },
+  "test": {
+    "rows": 851958,
+    "mae_kwh": 64.3332226505164,
+    "nmae_q995": 0.053035418690740785,
+    "vendor_mae_kwh": 71.17096854832738,
+    "vendor_nmae_q995": 0.060346152667030147,
+    "mae_improvement_pct": 9.607493107485144
+  }
+}

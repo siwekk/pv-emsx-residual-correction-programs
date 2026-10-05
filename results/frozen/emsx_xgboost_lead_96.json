@@ -1,0 +1,40 @@
+{
+  "dataset": "EMSx",
+  "lead_hours": 24.0,
+  "method": "Tuned XGBoost residual corrector",
+  "feature_contract": "Identical enhanced forecast-curve information set used by tuned QGBM.",
+  "trials": [
+    {
+      "max_depth": 8,
+      "min_child_weight": 20,
+      "best_iteration": 3999,
+      "validation_mae_kwh": 24.036423957203507
+    },
+    {
+      "max_depth": 10,
+      "min_child_weight": 50,
+      "best_iteration": 3999,
+      "validation_mae_kwh": 21.365502073269962
+    },
+    {
+      "max_depth": 12,
+      "min_child_weight": 100,
+      "best_iteration": 3999,
+      "validation_mae_kwh": 20.951721715385684
+    }
+  ],
+  "selected": {
+    "max_depth": 12,
+    "min_child_weight": 100,
+    "best_iteration": 3999,
+    "validation_mae_kwh": 20.951721715385684
+  },
+  "test": {
+    "rows": 851958,
+    "mae_kwh": 55.11003075018246,
+    "nmae_q995": 0.04456006138691683,
+    "vendor_mae_kwh": 71.17096854832738,
+    "vendor_nmae_q995": 0.060346152667030147,
+    "mae_improvement_pct": 22.566698368364946
+  }
+}
