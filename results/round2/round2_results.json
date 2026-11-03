@@ -1,0 +1,283 @@
+{
+  "created_utc": "2026-11-02T13:37:03.325867+00:00",
+  "command": [
+    "scripts\\round2_compute.py",
+    "--curves",
+    "<curves directory>",
+    "--original-predictions",
+    "<original predictions file>",
+    "--out",
+    "results"
+  ],
+  "software": {
+    "python": "3.12.10",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "lightgbm": "4.6.0"
+  },
+  "cutoffs": [
+    "2016-01-01",
+    "2016-04-01",
+    "2016-07-01"
+  ],
+  "lightgbm_settings": {
+    "objective": "regression_l1",
+    "colsample_bytree": 0.9,
+    "subsample": 0.85,
+    "reg_lambda": 2.0,
+    "reg_alpha": 0.05,
+    "verbosity": -1,
+    "random_state": 20261101,
+    "num_leaves": 127,
+    "min_child_samples": 200,
+    "learning_rate": 0.03,
+    "n_estimators": 952
+  },
+  "leakage": {
+    "global_fit_end": "2017-06-14 00:00:00+00:00",
+    "before_fit_end": {
+      "rows": 360096,
+      "profiles": 3751,
+      "systems": 49,
+      "vendor_mae_kwh": 77.7513382400267,
+      "lightgbm_mae_kwh": 35.94030147550747,
+      "reduction_percent": 53.77532748753995
+    },
+    "after_fit_end": {
+      "rows": 494112,
+      "profiles": 5147,
+      "systems": 45,
+      "vendor_mae_kwh": 66.66315888451986,
+      "lightgbm_mae_kwh": 64.01930597276792,
+      "reduction_percent": 3.965988044958779
+    },
+    "all": {
+      "rows": 854208,
+      "profiles": 8898,
+      "systems": 70,
+      "vendor_mae_kwh": 71.33744083130635,
+      "lightgbm_mae_kwh": 52.18244984001629,
+      "reduction_percent": 26.851244967683108
+    }
+  },
+  "calendar": {
+    "vendor": {
+      "test": {
+        "rows": 1392864,
+        "systems": 47,
+        "mae_kwh": 100.56763124697062,
+        "system_averaged_mae_kwh": 81.14487684701481,
+        "normalized_mae": 0.06768285625727088
+      }
+    },
+    "systems": 47,
+    "target_step": {
+      "features": [
+        "forecast_norm",
+        "delivery_step",
+        "lead_sin",
+        "lead_cos",
+        "valid_doy_sin",
+        "valid_doy_cos",
+        "site_id"
+      ],
+      "test": {
+        "rows": 1392864,
+        "systems": 47,
+        "mae_kwh": 91.21099349658962,
+        "system_averaged_mae_kwh": 73.724484256186,
+        "normalized_mae": 0.061516229817448836
+      },
+      "improved_systems": 47
+    },
+    "issued_curve": {
+      "features": [
+        "forecast_norm",
+        "delivery_step",
+        "lead_sin",
+        "lead_cos",
+        "valid_doy_sin",
+        "valid_doy_cos",
+        "site_id",
+        "curve_anchor_00_norm",
+        "curve_anchor_03_norm",
+        "curve_anchor_07_norm",
+        "curve_anchor_15_norm",
+        "curve_anchor_31_norm",
+        "curve_anchor_47_norm",
+        "curve_anchor_63_norm",
+        "curve_anchor_79_norm",
+        "curve_anchor_95_norm",
+        "curve_mean_kwh_norm",
+        "curve_std_kwh_norm",
+        "curve_max_kwh_norm",
+        "curve_energy_kwh_norm",
+        "curve_max_abs_ramp_kwh_norm",
+        "curve_peak_step_norm"
+      ],
+      "test": {
+        "rows": 1392864,
+        "systems": 47,
+        "mae_kwh": 83.91586262175589,
+        "system_averaged_mae_kwh": 67.29894221103349,
+        "normalized_mae": 0.055975372833069345
+      },
+      "improved_systems": 47
+    },
+    "full": {
+      "features": [
+        "forecast_norm",
+        "delivery_step",
+        "lead_sin",
+        "lead_cos",
+        "valid_doy_sin",
+        "valid_doy_cos",
+        "site_id",
+        "issue_actual_pv_kwh_norm",
+        "history_lag_01_kwh_norm",
+        "history_lag_02_kwh_norm",
+        "history_lag_03_kwh_norm",
+        "history_lag_04_kwh_norm",
+        "history_lag_05_kwh_norm",
+        "history_lag_06_kwh_norm",
+        "history_lag_07_kwh_norm",
+        "history_lag_08_kwh_norm",
+        "history_lag_09_kwh_norm",
+        "history_lag_10_kwh_norm",
+        "history_lag_11_kwh_norm",
+        "history_lag_12_kwh_norm",
+        "history_lag_13_kwh_norm",
+        "history_lag_14_kwh_norm",
+        "history_lag_15_kwh_norm",
+        "curve_anchor_00_norm",
+        "curve_anchor_03_norm",
+        "curve_anchor_07_norm",
+        "curve_anchor_15_norm",
+        "curve_anchor_31_norm",
+        "curve_anchor_47_norm",
+        "curve_anchor_63_norm",
+        "curve_anchor_79_norm",
+        "curve_anchor_95_norm",
+        "curve_mean_kwh_norm",
+        "curve_std_kwh_norm",
+        "curve_max_kwh_norm",
+        "curve_energy_kwh_norm",
+        "curve_max_abs_ramp_kwh_norm",
+        "curve_peak_step_norm",
+        "recent_24h_vendor_error_kwh_norm"
+      ],
+      "test": {
+        "rows": 1392864,
+        "systems": 47,
+        "mae_kwh": 83.25553379957697,
+        "system_averaged_mae_kwh": 66.76662978046241,
+        "normalized_mae": 0.05565491003041344
+      },
+      "improved_systems": 47
+    },
+    "full_cross": {
+      "features": [
+        "forecast_norm",
+        "delivery_step",
+        "lead_sin",
+        "lead_cos",
+        "valid_doy_sin",
+        "valid_doy_cos",
+        "site_id",
+        "issue_actual_pv_kwh_norm",
+        "history_lag_01_kwh_norm",
+        "history_lag_02_kwh_norm",
+        "history_lag_03_kwh_norm",
+        "history_lag_04_kwh_norm",
+        "history_lag_05_kwh_norm",
+        "history_lag_06_kwh_norm",
+        "history_lag_07_kwh_norm",
+        "history_lag_08_kwh_norm",
+        "history_lag_09_kwh_norm",
+        "history_lag_10_kwh_norm",
+        "history_lag_11_kwh_norm",
+        "history_lag_12_kwh_norm",
+        "history_lag_13_kwh_norm",
+        "history_lag_14_kwh_norm",
+        "history_lag_15_kwh_norm",
+        "curve_anchor_00_norm",
+        "curve_anchor_03_norm",
+        "curve_anchor_07_norm",
+        "curve_anchor_15_norm",
+        "curve_anchor_31_norm",
+        "curve_anchor_47_norm",
+        "curve_anchor_63_norm",
+        "curve_anchor_79_norm",
+        "curve_anchor_95_norm",
+        "curve_mean_kwh_norm",
+        "curve_std_kwh_norm",
+        "curve_max_kwh_norm",
+        "curve_energy_kwh_norm",
+        "curve_max_abs_ramp_kwh_norm",
+        "curve_peak_step_norm",
+        "recent_24h_vendor_error_kwh_norm",
+        "cross_error_mean_norm",
+        "cross_error_std_norm"
+      ],
+      "test": {
+        "rows": 1392864,
+        "systems": 47,
+        "mae_kwh": 83.93107106450906,
+        "system_averaged_mae_kwh": 67.23105430012308,
+        "normalized_mae": 0.05588274035207242
+      },
+      "improved_systems": 47
+    },
+    "ridge_global": {
+      "test": {
+        "rows": 1392864,
+        "systems": 47,
+        "mae_kwh": 101.12856701124504,
+        "system_averaged_mae_kwh": 81.54486364821288,
+        "normalized_mae": 0.06779367833405095
+      },
+      "improved_systems": 22,
+      "lambda": 1.0
+    },
+    "ridge_step": {
+      "test": {
+        "rows": 1392864,
+        "systems": 47,
+        "mae_kwh": 87.64841500721072,
+        "system_averaged_mae_kwh": 70.69342492767719,
+        "normalized_mae": 0.059084441073128886
+      },
+      "improved_systems": 47,
+      "lambda": 1.0
+    },
+    "transfer": {
+      "test": {
+        "rows": 1392864,
+        "systems": 47,
+        "mae_kwh": 81.7100518817956,
+        "system_averaged_mae_kwh": 65.1627997786005,
+        "normalized_mae": 0.049052840593185515
+      },
+      "improved_systems": 47,
+      "vendor_test_same_scale": {
+        "rows": 1392864,
+        "systems": 47,
+        "mae_kwh": 100.56763124697062,
+        "system_averaged_mae_kwh": 81.14487684701481,
+        "normalized_mae": 0.06108892867706615
+      },
+      "design": "5 folds over sorted system ids; held systems absent from fitting; no system identity; scale = 99.5th percentile of issued vendor forecasts in the calibration quarter, no measurements."
+    }
+  },
+  "bootstrap": {
+    "system_averaged_gain_kwh": 14.378247066552378,
+    "ci95_kwh": [
+      4.308295962472601,
+      34.85732739918401
+    ],
+    "replicates": 2000,
+    "seed": 20261102,
+    "blocks": "systems resampled, then calendar weeks within each selected system"
+  },
+  "runtime_minutes": 15.387585218747457
+}

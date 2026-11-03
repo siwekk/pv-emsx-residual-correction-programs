@@ -69,12 +69,13 @@
         "0.95": 7.866995528358968
       },
       "central_grid_crps_approximation_kwh": 55.545263018817735,
-      "weighted_interval_score_kwh": 77.01155223844108,
+      "weighted_interval_score_kwh": 62.55146017599822,
       "central_90_interval_coverage": 0.9362625964636248,
       "central_90_interval_mean_width_kwh": 309.406904984241,
       "central_90_interval_score_kwh": 413.5983588019044,
       "keys_missing_from_reference": 0,
-      "reference_keys_missing_from_method": 0
+      "reference_keys_missing_from_method": 0,
+      "legacy_invalid_weighted_interval_score_kwh": 77.01155223844108
     },
     "chronos2_vendor_covariate": {
       "file": "artifacts_local/predictions/emsx_daily_chronos2_vendor_covariate.parquet",
@@ -120,12 +121,13 @@
         "0.95": 9.053898995040457
       },
       "central_grid_crps_approximation_kwh": 44.9754813586412,
-      "weighted_interval_score_kwh": 57.94431965596209,
+      "weighted_interval_score_kwh": 50.58139710403381,
       "central_90_interval_coverage": 0.8638481493968682,
       "central_90_interval_mean_width_kwh": 165.45023652816005,
       "central_90_interval_score_kwh": 436.16133983309425,
       "keys_missing_from_reference": 0,
-      "reference_keys_missing_from_method": 0
+      "reference_keys_missing_from_method": 0,
+      "legacy_invalid_weighted_interval_score_kwh": 57.94431965596209
     },
     "moirai2_target_only": {
       "file": "artifacts_local/predictions/emsx_daily_moirai2_target_only.parquet",
@@ -171,12 +173,13 @@
         "0.95": 11.104078095233877
       },
       "central_grid_crps_approximation_kwh": 67.34228046704565,
-      "weighted_interval_score_kwh": 92.71284899527781,
+      "weighted_interval_score_kwh": 75.80395887071802,
       "central_90_interval_coverage": 0.9442583071102121,
       "central_90_interval_mean_width_kwh": 376.2786162907869,
       "central_90_interval_score_kwh": 470.6197102154229,
       "keys_missing_from_reference": 0,
-      "reference_keys_missing_from_method": 0
+      "reference_keys_missing_from_method": 0,
+      "legacy_invalid_weighted_interval_score_kwh": 92.71284899527781
     },
     "moirai2_vendor_covariate": {
       "file": "artifacts_local/predictions/emsx_daily_moirai2_vendor_covariate.parquet",
@@ -222,12 +225,33 @@
         "0.95": 17.963138658548207
       },
       "central_grid_crps_approximation_kwh": 85.90461843682196,
-      "weighted_interval_score_kwh": 114.29087255100089,
+      "weighted_interval_score_kwh": 96.73196320690839,
       "central_90_interval_coverage": 0.9093358994530606,
       "central_90_interval_mean_width_kwh": 397.5022166189979,
       "central_90_interval_score_kwh": 594.2453180702215,
       "keys_missing_from_reference": 0,
-      "reference_keys_missing_from_method": 0
+      "reference_keys_missing_from_method": 0,
+      "legacy_invalid_weighted_interval_score_kwh": 114.29087255100089
     }
-  }
+  },
+  "wis_migration_version": "wis4-corrected-20261101",
+  "wis_migration": [
+    {
+      "field": "methods/chronos2_target_only/weighted_interval_score_kwh",
+      "status": "corrected_from_unrounded_pinball_and_outer_interval_score"
+    },
+    {
+      "field": "methods/chronos2_vendor_covariate/weighted_interval_score_kwh",
+      "status": "corrected_from_unrounded_pinball_and_outer_interval_score"
+    },
+    {
+      "field": "methods/moirai2_target_only/weighted_interval_score_kwh",
+      "status": "corrected_from_unrounded_pinball_and_outer_interval_score"
+    },
+    {
+      "field": "methods/moirai2_vendor_covariate/weighted_interval_score_kwh",
+      "status": "corrected_from_unrounded_pinball_and_outer_interval_score"
+    }
+  ],
+  "evaluation_note": "Original partitions have staggered dates across systems; use results/round1 for the common calendar validation."
 }

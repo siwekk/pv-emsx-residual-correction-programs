@@ -1,0 +1,131 @@
+{
+  "created_utc": "2026-11-01T19:43:50.301956+00:00",
+  "source_program": "audit_revision.py",
+  "source_program_sha256": "22fb1b49c0646c6b1e702ad1a0443f5000c566e3a1cf6907ef0120bbde2e2a64",
+  "chronology": {
+    "latest_fit_target": "2017-06-14 00:00:00+00:00",
+    "partition_ranges": [
+      {
+        "partition": "calibration",
+        "first_issue": "2014-03-10 00:00:00+00:00",
+        "last_issue": "2017-07-30 00:00:00+00:00",
+        "profiles": 4421,
+        "delivery_rows": 424416,
+        "profiles_before_global_fit_end": 4049
+      },
+      {
+        "partition": "test",
+        "first_issue": "2014-05-09 00:00:00+00:00",
+        "last_issue": "2017-11-16 00:00:00+00:00",
+        "profiles": 8898,
+        "delivery_rows": 854208,
+        "profiles_before_global_fit_end": 3751
+      },
+      {
+        "partition": "train",
+        "first_issue": "2013-01-13 00:00:00+00:00",
+        "last_issue": "2017-05-20 00:00:00+00:00",
+        "profiles": 28682,
+        "delivery_rows": 2753472,
+        "profiles_before_global_fit_end": 28682
+      },
+      {
+        "partition": "tuning",
+        "first_issue": "2014-02-01 00:00:00+00:00",
+        "last_issue": "2017-06-13 00:00:00+00:00",
+        "profiles": 2222,
+        "delivery_rows": 213312,
+        "profiles_before_global_fit_end": 2222
+      }
+    ],
+    "affected_test_systems": 49,
+    "raw_eligible_profiles": 44393,
+    "complete_profiles": 44223
+  },
+  "scores": {
+    "raw": {
+      "rows": 854208,
+      "median_mae_kwh": 52.08038424708568,
+      "mean_pinball_kwh": 19.579126009046618,
+      "wis_kwh": 43.52830497937603,
+      "grid_crps_kwh": 38.62166490055625,
+      "coverage_90": 0.8274916647935866,
+      "width_90_kwh": 129.84764520774627,
+      "interval_score_90_kwh": 389.8602738464132
+    },
+    "calibrated": {
+      "rows": 854208,
+      "median_mae_kwh": 50.991953479056335,
+      "mean_pinball_kwh": 17.837117502679522,
+      "wis_kwh": 40.39838110371623,
+      "grid_crps_kwh": 35.849209580491134,
+      "coverage_90": 0.9187621750206039,
+      "width_90_kwh": 191.60664629765844,
+      "interval_score_90_kwh": 288.3115512550345
+    },
+    "calibration_quantile_median": {
+      "rows": 424416,
+      "median_mae_kwh": 18.201672213904622,
+      "mean_pinball_kwh": 6.645938058662292,
+      "wis_kwh": 14.796218711543858,
+      "grid_crps_kwh": 13.153643115868496,
+      "coverage_90": 0.915670003015909,
+      "width_90_kwh": 108.48874088069194,
+      "interval_score_90_kwh": 130.4466888667573
+    },
+    "chronos_vendor": {
+      "rows": 854208,
+      "median_mae_kwh": 62.38052009265307,
+      "mean_pinball_kwh": 22.674941269073354,
+      "wis_kwh": 50.581397104033805,
+      "grid_crps_kwh": 44.97548135864154,
+      "coverage_90": 0.8638481493968682,
+      "width_90_kwh": 165.45023652816005,
+      "interval_score_90_kwh": 436.1613398330942
+    },
+    "chronos_target": {
+      "rows": 854208,
+      "median_mae_kwh": 81.1313709046856,
+      "mean_pinball_kwh": 27.469226248371587,
+      "wis_kwh": 62.55146017599828,
+      "grid_crps_kwh": 55.545263018817394,
+      "coverage_90": 0.9362625964636248,
+      "width_90_kwh": 309.406904984241,
+      "interval_score_90_kwh": 413.5983588019044
+    },
+    "moirai_target": {
+      "rows": 854208,
+      "median_mae_kwh": 99.80072679091866,
+      "mean_pinball_kwh": 33.14989094809109,
+      "wis_kwh": 75.80395887071795,
+      "grid_crps_kwh": 67.34228046704621,
+      "coverage_90": 0.9442583071102121,
+      "width_90_kwh": 376.27861629078694,
+      "interval_score_90_kwh": 470.6197102154232
+    },
+    "moirai_vendor": {
+      "rows": 854208,
+      "median_mae_kwh": 126.05513366749588,
+      "mean_pinball_kwh": 42.273281848599886,
+      "wis_kwh": 96.73196320690839,
+      "grid_crps_kwh": 85.90461843682178,
+      "coverage_90": 0.9093358994530606,
+      "width_90_kwh": 397.50221661899803,
+      "interval_score_90_kwh": 594.2453180702215
+    }
+  },
+  "wis_contract": "K=4; alpha=0.2,0.4,0.6,0.8; bounds q(alpha/2),q(1-alpha/2); weights alpha/2; median weight 0.5; divisor 4.5; pooled equally over delivery rows.",
+  "source_prediction_sha256": {
+    "emsx_daily_arima.parquet": "6e6e26b1704e639463b030ce9404ceecc54165aa3f8aa9da4f17731835255c79",
+    "emsx_daily_arima_smoke.parquet": "3f6aeb1c8cbacecec0ea0f5a6c6110d37cb797f78f5fc342a6ba590805565b2d",
+    "emsx_daily_baselines.parquet": "b5ac2f9c6580e6159725200e8438046d3a2ee267b5ee59cc7052091a846eda0d",
+    "emsx_daily_chronos2_target_only.parquet": "b4705ff5cf8320043e13e59db85c73443f3b30f345c08997f1aaca27a93bf337",
+    "emsx_daily_chronos2_vendor_covariate.parquet": "674be57365617b8c05b723c6f6aad5c5257974f7dc068dfdf86dc94dc8b4c6a9",
+    "emsx_daily_lightgbm.parquet": "0f889ffb9fc4d0086e7a236e58cca876e8c3d91749e6eed191c55594c227e0c7",
+    "emsx_daily_lightgbm_ablation.parquet": "5456e13fd4d1d663f49808b22ec7bb8bb3e9359ada5de45db0e28b9975361e09",
+    "emsx_daily_moirai2_target_only.parquet": "e1f9f1db2e75376eaf5d79e0140823fee5b6d6cfed2719a06117d4f09c323c1c",
+    "emsx_daily_moirai2_vendor_covariate.parquet": "5ad0e0b4afeb23bae729a2bd2f959961d76612cb15f3dc8f9655064651982e1d",
+    "emsx_daily_quantile_lightgbm.parquet": "44607575882773592b2eba7c8ab78caab325af63d6b36222023c382361e5626e",
+    "emsx_daily_quantile_lightgbm_calibration.parquet": "b1696fa2721de18734d047703724e1a43b831f9106f12379b050268478d05e5c"
+  }
+}

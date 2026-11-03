@@ -10,6 +10,7 @@ from pathlib import Path
 import pandas as pd
 
 from emsx_daily_fewshot_common import score_predictions
+from emsx_probabilistic import normalize_saved_metrics, SCORING_VERSION
 
 
 KEYS = ["site_id", "issue_time", "valid_time", "delivery_step"]
@@ -31,6 +32,7 @@ def expected_identifiers(protocol: dict) -> set[str]:
 
 
 def compare_metrics(saved: dict, calculated: dict, label: str) -> list[str]:
+    saved = normalize_saved_metrics(saved)
     errors = []
     for key, value in saved.items():
         if key not in calculated:
@@ -121,6 +123,8 @@ def main() -> None:
             errors.append(f"{identifier}: calibration and test profiles overlap")
 
     report = {
+        "wis_scoring_version": SCORING_VERSION,
+        "wis_reference_policy": "Saved WIS is normalized from unrounded pinball and outer interval scores before comparison; other stored metrics are unchanged.",
         "expected_fits": len(expected),
         "result_files_checked": len(present),
         "prediction_files_checked": checked_predictions,

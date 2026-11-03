@@ -9,6 +9,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from emsx_probabilistic import wis_rows, trapezoid
 
 
 QUANTILES = np.asarray([.05, .10, .20, .30, .40, .50, .60, .70, .80, .90, .95])
@@ -75,10 +76,7 @@ def evaluate(path: Path) -> tuple[pd.DataFrame, dict]:
     qvalues = np.sort(raw_qvalues, axis=1)
     raw_losses = np.column_stack([pinball(y, raw_qvalues[:, index], quantile) for index, quantile in enumerate(QUANTILES)])
     losses = np.column_stack([pinball(y, qvalues[:, index], quantile) for index, quantile in enumerate(QUANTILES)])
-    interval_terms = []
-    for alpha, lower_col, upper_col in ((.8, 1, 9), (.6, 2, 8), (.4, 3, 7), (.2, 4, 6)):
-        interval_terms.append((alpha / 2.0) * interval_score(y, qvalues[:, lower_col], qvalues[:, upper_col], alpha))
-    wis = (0.5 * np.abs(y - qvalues[:, 5]) + np.sum(interval_terms, axis=0)) / 4.5
+    wis = wis_rows(y, qvalues)
     is90 = interval_score(y, qvalues[:, 0], qvalues[:, 10], .1)
     result = {
         "file": str(path),
@@ -97,7 +95,7 @@ def evaluate(path: Path) -> tuple[pd.DataFrame, dict]:
         "raw_mean_pinball_kwh": float(raw_losses[row_finite].mean()),
         "mean_pinball_kwh": float(losses[row_finite].mean()),
         "pinball_kwh_by_quantile": {str(q): float(losses[row_finite, i].mean()) for i, q in enumerate(QUANTILES)},
-        "central_grid_crps_approximation_kwh": float(2.0 * np.trapz(losses[row_finite].mean(axis=0), QUANTILES)),
+        "central_grid_crps_approximation_kwh": float(2.0 * trapezoid(losses[row_finite].mean(axis=0), QUANTILES)),
         "weighted_interval_score_kwh": float(wis[row_finite].mean()),
         "central_90_interval_coverage": float(np.mean((y[row_finite] >= qvalues[row_finite, 0]) & (y[row_finite] <= qvalues[row_finite, 10]))),
         "central_90_interval_mean_width_kwh": float(np.mean(qvalues[row_finite, 10] - qvalues[row_finite, 0])),

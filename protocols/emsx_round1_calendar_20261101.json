@@ -1,0 +1,28 @@
+{
+  "revision": "round1",
+  "calendar_cutoffs_utc": ["2016-01-01T00:00:00Z", "2016-04-01T00:00:00Z", "2016-07-01T00:00:00Z"],
+  "eligibility_complete_profiles": {"train_min": 30, "tuning_min": 7, "calibration_min": 7, "test_min": 7},
+  "lightgbm_candidates": [
+    {"num_leaves": 63, "min_child_samples": 300, "learning_rate": 0.04},
+    {"num_leaves": 127, "min_child_samples": 200, "learning_rate": 0.03},
+    {"num_leaves": 255, "min_child_samples": 100, "learning_rate": 0.02}
+  ],
+  "lightgbm_max_iterations": 1000,
+  "lightgbm_early_stopping_rounds": 100,
+  "neural_seeds": [20261101, 20261102, 20261103],
+  "neural_max_epochs": 25,
+  "neural_patience": 5,
+  "neural_learning_rate": 0.001,
+  "neural_batch_size": 256,
+  "neural_loss": "normalized residual absolute error",
+  "selection_metric": "pooled raw kWh MAE on tuning only",
+  "evaluation": "Report calibration and test for all runs; do not select the best seed.",
+  "scope": "Point and quantile correction under common calendar boundaries. No new foundation model adaptation.",
+  "quantile_followup": {
+    "added_after_point_results": true,
+    "structure_selection": "Reuse common-calendar point tuning choice without selecting on quantile test outcomes.",
+    "quantiles": [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95],
+    "rolling_window_calendar_days": 30,
+    "selection_on_test": false
+  }
+}

@@ -1,0 +1,27 @@
+\section*{Upload the prepared revision}
+
+The local repository is based on public commit
+\texttt{1cc4049b4cd9ec657a62f36597612bc936c805bd}. Its new revision commit is local
+until the owner uploads it. The remote remains
+\url{https://github.com/siwekk/pv-emsx-residual-correction-programs}.
+No upload was performed while preparing this package.
+
+From the prepared repository directory, inspect and upload the committed update:
+
+\begin{verbatim}
+git status
+git log -1 --oneline
+git push origin main
+git push origin round1-2026-11-01
+git push origin round2-2026-11-02
+\end{verbatim}
+
+The last two commands publish the local version tags. The tag \texttt{round2-2026-11-02} marks the programs of the second revision. Authentication, if requested,
+is handled by the owner's Git client. If Git reports that the public branch has
+advanced, incorporate those changes before uploading; a forced push is unnecessary.
+
+The accompanying ZIP contains tracked source files and aggregate results without
+Git metadata. It can also be extracted for a browser upload, preserving the
+directory structure. Upload the extracted files rather than adding the ZIP as
+the repository's only new file. The prepared directory retains the commit
+history and is the simpler option when using Git.

@@ -12,6 +12,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from emsx_probabilistic import wis_rows, trapezoid
 
 
 SEED = 20260906
@@ -69,15 +70,11 @@ def probabilistic_metrics(frame: pd.DataFrame) -> dict:
     y = frame.actual_pv_kwh.to_numpy(float)
     q = frame[QCOLS].to_numpy(float)
     losses = np.column_stack([np.maximum(tau * (y - q[:, i]), (tau - 1) * (y - q[:, i])) for i, tau in enumerate(QUANTILES)])
-    interval_terms = []
-    for alpha, lo, hi in ((.8, 1, 9), (.6, 2, 8), (.4, 3, 7), (.2, 4, 6)):
-        score = q[:, hi] - q[:, lo] + 2 / alpha * (q[:, lo] - y) * (y < q[:, lo]) + 2 / alpha * (y - q[:, hi]) * (y > q[:, hi])
-        interval_terms.append(alpha / 2 * score)
-    wis = (0.5 * np.abs(y - q[:, 5]) + np.sum(interval_terms, axis=0)) / 4.5
+    wis = wis_rows(y, q)
     return {
         "median_mae_kwh": float(np.mean(np.abs(y - q[:, 5]))),
         "mean_pinball_kwh": float(losses.mean()),
-        "grid_crps_kwh": float(2 * np.trapz(losses.mean(axis=0), QUANTILES)),
+        "grid_crps_kwh": float(2 * trapezoid(losses.mean(axis=0), QUANTILES)),
         "wis_kwh": float(wis.mean()),
         "coverage_90": float(np.mean((y >= q[:, 0]) & (y <= q[:, -1]))),
         "width_90_kwh": float(np.mean(q[:, -1] - q[:, 0])),

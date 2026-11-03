@@ -88,33 +88,37 @@
       "median_mae_kwh": 81.13137090468561,
       "mean_pinball_kwh": 27.469226248371566,
       "grid_crps_kwh": 55.545263018817735,
-      "wis_kwh": 77.01155223844108,
+      "wis_kwh": 62.55146017599822,
       "coverage_90": 0.9362625964636248,
-      "width_90_kwh": 309.406904984241
+      "width_90_kwh": 309.406904984241,
+      "legacy_invalid_wis_kwh": 77.01155223844108
     },
     "Chronos-2 + vendor": {
       "median_mae_kwh": 62.380520092653086,
       "mean_pinball_kwh": 22.67494126907335,
       "grid_crps_kwh": 44.9754813586412,
-      "wis_kwh": 57.94431965596209,
+      "wis_kwh": 50.58139710403381,
       "coverage_90": 0.8638481493968682,
-      "width_90_kwh": 165.45023652816005
+      "width_90_kwh": 165.45023652816005,
+      "legacy_invalid_wis_kwh": 57.94431965596209
     },
     "Moirai 2.0 target-only": {
       "median_mae_kwh": 99.80072679091865,
       "mean_pinball_kwh": 33.14989094809111,
       "grid_crps_kwh": 67.34228046704565,
-      "wis_kwh": 92.71284899527781,
+      "wis_kwh": 75.80395887071802,
       "coverage_90": 0.9442583071102121,
-      "width_90_kwh": 376.2786162907869
+      "width_90_kwh": 376.2786162907869,
+      "legacy_invalid_wis_kwh": 92.71284899527781
     },
     "Moirai 2.0 + vendor": {
       "median_mae_kwh": 126.05513366749588,
       "mean_pinball_kwh": 42.27328184859989,
       "grid_crps_kwh": 85.90461843682196,
-      "wis_kwh": 114.29087255100089,
+      "wis_kwh": 96.73196320690839,
       "coverage_90": 0.9093358994530606,
-      "width_90_kwh": 397.5022166189979
+      "width_90_kwh": 397.5022166189979,
+      "legacy_invalid_wis_kwh": 114.29087255100089
     }
   },
   "complete_context_probabilistic_metrics": {
@@ -122,33 +126,37 @@
       "median_mae_kwh": 82.08877502323932,
       "mean_pinball_kwh": 27.79352960174273,
       "grid_crps_kwh": 56.201087892005916,
-      "wis_kwh": 77.92403530968535,
+      "wis_kwh": null,
       "coverage_90": 0.9365286633268814,
-      "width_90_kwh": 313.12378583452096
+      "width_90_kwh": 313.12378583452096,
+      "legacy_invalid_wis_kwh": 77.92403530968535
     },
     "Chronos-2 + vendor": {
       "median_mae_kwh": 63.110014926769736,
       "mean_pinball_kwh": 22.938017395429664,
       "grid_crps_kwh": 45.49859714899266,
-      "wis_kwh": 58.621176291964765,
+      "wis_kwh": null,
       "coverage_90": 0.8638574993358382,
-      "width_90_kwh": 167.43344636434333
+      "width_90_kwh": 167.43344636434333,
+      "legacy_invalid_wis_kwh": 58.621176291964765
     },
     "Moirai 2.0 target-only": {
       "median_mae_kwh": 100.94277155315869,
       "mean_pinball_kwh": 33.52836463561431,
       "grid_crps_kwh": 68.11136567229144,
-      "wis_kwh": 93.77962799473593,
+      "wis_kwh": null,
       "coverage_90": 0.9448710102850203,
-      "width_90_kwh": 380.7506170157923
+      "width_90_kwh": 380.7506170157923,
+      "legacy_invalid_wis_kwh": 93.77962799473593
     },
     "Moirai 2.0 + vendor": {
       "median_mae_kwh": 127.49099616812792,
       "mean_pinball_kwh": 42.75995401000911,
       "grid_crps_kwh": 86.89269619471098,
-      "wis_kwh": 115.60996762384725,
+      "wis_kwh": null,
       "coverage_90": 0.9096597593836578,
-      "width_90_kwh": 402.19832289222694
+      "width_90_kwh": 402.19832289222694,
+      "legacy_invalid_wis_kwh": 115.60996762384725
     }
   },
   "excluded_incomplete_context_curves": 115,
@@ -205,5 +213,41 @@
         "reduction": 60.716174702041656
       }
     ]
-  }
+  },
+  "wis_migration_version": "wis4-corrected-20261101",
+  "wis_migration": [
+    {
+      "field": "probabilistic_metrics/Chronos-2 target-only/wis_kwh",
+      "status": "corrected_from_matching_full_prediction_audit"
+    },
+    {
+      "field": "probabilistic_metrics/Chronos-2 + vendor/wis_kwh",
+      "status": "corrected_from_matching_full_prediction_audit"
+    },
+    {
+      "field": "probabilistic_metrics/Moirai 2.0 target-only/wis_kwh",
+      "status": "corrected_from_matching_full_prediction_audit"
+    },
+    {
+      "field": "probabilistic_metrics/Moirai 2.0 + vendor/wis_kwh",
+      "status": "corrected_from_matching_full_prediction_audit"
+    },
+    {
+      "field": "complete_context_probabilistic_metrics/Chronos-2 target-only/wis_kwh",
+      "status": "withdrawn_full_predictions_required"
+    },
+    {
+      "field": "complete_context_probabilistic_metrics/Chronos-2 + vendor/wis_kwh",
+      "status": "withdrawn_full_predictions_required"
+    },
+    {
+      "field": "complete_context_probabilistic_metrics/Moirai 2.0 target-only/wis_kwh",
+      "status": "withdrawn_full_predictions_required"
+    },
+    {
+      "field": "complete_context_probabilistic_metrics/Moirai 2.0 + vendor/wis_kwh",
+      "status": "withdrawn_full_predictions_required"
+    }
+  ],
+  "evaluation_note": "Original partitions have staggered dates across systems; use results/round1 for the common calendar validation."
 }

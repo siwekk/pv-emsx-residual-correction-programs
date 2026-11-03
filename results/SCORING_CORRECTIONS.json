@@ -1,0 +1,178 @@
+{
+  "scoring_version": "wis4-corrected-20261101",
+  "note": "Legacy-invalid values are retained only for provenance, never as valid WIS. Corrected round1 results are separate.",
+  "files": [
+    {
+      "file": "results/article_summaries/emsx_daily_foundation_probabilistic.json",
+      "changes": [
+        {
+          "field": "methods/chronos2_target_only/weighted_interval_score_kwh",
+          "status": "corrected_from_unrounded_pinball_and_outer_interval_score"
+        },
+        {
+          "field": "methods/chronos2_vendor_covariate/weighted_interval_score_kwh",
+          "status": "corrected_from_unrounded_pinball_and_outer_interval_score"
+        },
+        {
+          "field": "methods/moirai2_target_only/weighted_interval_score_kwh",
+          "status": "corrected_from_unrounded_pinball_and_outer_interval_score"
+        },
+        {
+          "field": "methods/moirai2_vendor_covariate/weighted_interval_score_kwh",
+          "status": "corrected_from_unrounded_pinball_and_outer_interval_score"
+        }
+      ]
+    },
+    {
+      "file": "results/article_summaries/emsx_daily_manuscript_analyses.json",
+      "changes": [
+        {
+          "field": "probabilistic_metrics/Chronos-2 target-only/wis_kwh",
+          "status": "corrected_from_matching_full_prediction_audit"
+        },
+        {
+          "field": "probabilistic_metrics/Chronos-2 + vendor/wis_kwh",
+          "status": "corrected_from_matching_full_prediction_audit"
+        },
+        {
+          "field": "probabilistic_metrics/Moirai 2.0 target-only/wis_kwh",
+          "status": "corrected_from_matching_full_prediction_audit"
+        },
+        {
+          "field": "probabilistic_metrics/Moirai 2.0 + vendor/wis_kwh",
+          "status": "corrected_from_matching_full_prediction_audit"
+        },
+        {
+          "field": "complete_context_probabilistic_metrics/Chronos-2 target-only/wis_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "complete_context_probabilistic_metrics/Chronos-2 + vendor/wis_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "complete_context_probabilistic_metrics/Moirai 2.0 target-only/wis_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "complete_context_probabilistic_metrics/Moirai 2.0 + vendor/wis_kwh",
+          "status": "withdrawn_full_predictions_required"
+        }
+      ]
+    },
+    {
+      "file": "results/article_summaries/emsx_daily_quantile_lightgbm.json",
+      "changes": [
+        {
+          "field": "raw_test/wis_kwh",
+          "status": "corrected_from_unrounded_pinball_and_outer_interval_score"
+        },
+        {
+          "field": "causally_calibrated_test/wis_kwh",
+          "status": "corrected_from_unrounded_pinball_and_outer_interval_score"
+        }
+      ]
+    },
+    {
+      "file": "results/article_summaries/emsx_frozen_fewshot_summary.json",
+      "changes": [
+        {
+          "field": "aggregate/chronos2/target_only/calibration/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/chronos2/target_only/test/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/chronos2/vendor_covariate/calibration/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/chronos2/vendor_covariate/test/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/moirai2/target_only/calibration/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/moirai2/target_only/test/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/moirai2/vendor_covariate/calibration/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/moirai2/vendor_covariate/test/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        }
+      ]
+    },
+    {
+      "file": "results/frozen/emsx_frozen_fewshot_seed_metrics.csv",
+      "changes": [
+        {
+          "field": "weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        }
+      ]
+    },
+    {
+      "file": "results/frozen/emsx_frozen_fewshot_summary.json",
+      "changes": [
+        {
+          "field": "aggregate/chronos2/target_only/calibration/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/chronos2/target_only/test/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/chronos2/vendor_covariate/calibration/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/chronos2/vendor_covariate/test/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/moirai2/target_only/calibration/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/moirai2/target_only/test/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/moirai2/vendor_covariate/calibration/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        },
+        {
+          "field": "aggregate/moirai2/vendor_covariate/test/weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        }
+      ]
+    },
+    {
+      "file": "results/moirai_96/moirai_96_seed_metrics.csv",
+      "changes": [
+        {
+          "field": "weighted_interval_score_kwh",
+          "status": "withdrawn_full_predictions_required"
+        }
+      ]
+    },
+    {
+      "file": "results/moirai_96/moirai_96_summary.csv",
+      "changes": [
+        {
+          "field": "mean_wis_kwh",
+          "status": "withdrawn_full_predictions_required"
+        }
+      ]
+    }
+  ]
+}

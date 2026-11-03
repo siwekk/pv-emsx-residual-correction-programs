@@ -5,7 +5,12 @@
 !/requirements.txt
 !/requirements-chronos.txt
 !/requirements-moirai.txt
+!/requirements-round1.txt
+!/README.md
 !/README.tex
+!/UPLOAD.tex
+!/VERSION
+!/tests/
 !/.gitignore
 !/results/
 
@@ -15,6 +20,9 @@
 !/results/frozen/
 !/results/moirai_diagnostics/
 !/results/moirai_96/
+!/results/round1/
+!/results/round2/
+!/results/SCORING_CORRECTIONS.json
 
 /results/article_summaries/*
 !/results/article_summaries/*.json
@@ -27,9 +35,21 @@
 /results/moirai_96/*
 !/results/moirai_96/*.csv
 !/results/moirai_96/*.pdf
+/results/round2/*
+!/results/round2/*.json
+/results/round1/*
+!/results/round1/*.json
+!/results/round1/*.csv
+!/results/round1/*.pdf
+!/results/round1/README.tex
 
 /scripts/*
 !/scripts/*.py
 !/scripts/*.sh
 /protocols/*
 !/protocols/*.json
+/tests/*
+!/tests/*.py
+__pycache__/
+*.pyc
+.pytest_cache/

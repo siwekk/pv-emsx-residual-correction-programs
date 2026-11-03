@@ -1,0 +1,9 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "pyarrow": "20.0.0",
+  "lightgbm": "4.6.0",
+  "torch": "2.9.1",
+  "matplotlib": "3.10.9"
+}

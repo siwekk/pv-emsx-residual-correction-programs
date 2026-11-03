@@ -45,7 +45,7 @@
     "median_mae_kwh": 52.08038424708568,
     "mean_pinball_kwh": 19.57912600904663,
     "grid_crps_kwh": 38.62166490055585,
-    "wis_kwh": 48.910718623827385,
+    "wis_kwh": 43.52830497937606,
     "coverage_90": 0.8274916647935866,
     "width_90_kwh": 129.84764520774627,
     "interval_score_90_kwh": 389.8602738464132,
@@ -61,13 +61,14 @@
       "0.8": 0.8056983779126395,
       "0.9": 0.8557903929722035,
       "0.95": 0.9066140799430583
-    }
+    },
+    "legacy_invalid_wis_kwh": 48.910718623827385
   },
   "causally_calibrated_test": {
     "median_mae_kwh": 50.991953479056335,
     "mean_pinball_kwh": 17.837117502679522,
     "grid_crps_kwh": 35.84920958049128,
-    "wis_kwh": 49.24497204888561,
+    "wis_kwh": 40.398381103716225,
     "coverage_90": 0.9187621750206039,
     "width_90_kwh": 191.60664629765841,
     "interval_score_90_kwh": 288.3115512550344,
@@ -83,12 +84,25 @@
       "0.8": 0.8853909118153892,
       "0.9": 0.9323221042181764,
       "0.95": 0.9624623042631303
-    }
+    },
+    "legacy_invalid_wis_kwh": 49.24497204888561
   },
   "software": {
     "python": "3.12.3",
     "numpy": "1.26.4",
     "pandas": "3.0.5",
     "lightgbm": "4.5.0"
-  }
+  },
+  "wis_migration_version": "wis4-corrected-20261101",
+  "wis_migration": [
+    {
+      "field": "raw_test/wis_kwh",
+      "status": "corrected_from_unrounded_pinball_and_outer_interval_score"
+    },
+    {
+      "field": "causally_calibrated_test/wis_kwh",
+      "status": "corrected_from_unrounded_pinball_and_outer_interval_score"
+    }
+  ],
+  "evaluation_note": "Original partitions have staggered dates across systems; use results/round1 for the common calendar validation."
 }

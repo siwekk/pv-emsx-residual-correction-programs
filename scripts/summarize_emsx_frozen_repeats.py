@@ -9,6 +9,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from emsx_probabilistic import normalize_saved_metrics, SCORING_VERSION
 
 
 METRICS = (
@@ -66,11 +67,15 @@ def main() -> None:
                 ):
                     if metrics is None:
                         raise RuntimeError(f"Missing {partition} metrics in {path}")
+                    metrics = normalize_saved_metrics(metrics)
                     row = {"model": model, "variant": variant, "seed": seed,
                            "partition": partition, "identifier": identifier}
                     row.update({name: metrics[name] for name in METRICS})
                     rows.append(row)
                     if partition not in vendor:
+                        prediction_file = Path(prediction_file)
+                        if not prediction_file.is_file():
+                            prediction_file = root / "predictions" / prediction_file.name
                         prediction = pd.read_parquet(prediction_file, columns=[
                             "actual_pv_kwh", "vendor_prediction_kwh",
                         ])
@@ -98,7 +103,8 @@ def main() -> None:
         "missing_identifiers": missing,
         "vendor_mae_kwh": vendor,
         "aggregate": aggregates,
-        "interpretation": "Seed percentiles describe variation across random initializations and training batches. They are not confidence intervals for unseen sites or future periods. The original test period informed configuration selection; calibration did not.",
+        "wis_scoring_version": SCORING_VERSION,
+        "interpretation": "Seed percentiles describe variation across random initializations and training batches, not uncertainty for unseen sites or future periods. Test informed setting selection. Original system partitions have staggered dates and do not establish global temporal validity.",
     }
     (root / "summary.json").write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"completed_fits": output["completed_fits"],

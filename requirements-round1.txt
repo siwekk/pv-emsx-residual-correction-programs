@@ -1,0 +1,10 @@
+# Python 3.12.10 was used for the November 2026 revision.
+numpy==2.3.5
+pandas==2.3.3
+pyarrow==20.0.0
+lightgbm==4.6.0
+torch==2.9.1
+matplotlib==3.10.9
+scikit-learn==1.7.2
+joblib==1.5.3
+requests==2.34.2

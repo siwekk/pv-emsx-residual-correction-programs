@@ -1,0 +1,167 @@
+{
+  "step": {
+    "peak_hour": 12.75,
+    "vendor_peak": 284.9572906739888,
+    "lgb_at_peak": 244.9397027290846,
+    "steps_lgb_below_vendor_active": 96,
+    "active_steps": 96
+  },
+  "systems": {
+    "min_gain": 0.02593140078968982,
+    "max_gain": 415.3215892463468,
+    "median_gain": 4.6759830120112404,
+    "min_rel": 12.217347090431868,
+    "median_rel": 19.030712709522344,
+    "max_rel": 28.33423770485888,
+    "transfer_min_gain": 0.02171494630947904
+  },
+  "seasons": [
+    {
+      "season": "DJF",
+      "vendor": 72.71106156321473,
+      "lgb": 55.47899424170035,
+      "red": 17.23206732151438,
+      "rel": 23.69937524090868,
+      "profiles": 3381,
+      "systems": 43
+    },
+    {
+      "season": "MAM",
+      "vendor": 145.25037625409453,
+      "lgb": 119.15945654249943,
+      "red": 26.090919711595106,
+      "rel": 17.962720912992896,
+      "profiles": 2182,
+      "systems": 30
+    },
+    {
+      "season": "JJA",
+      "vendor": 130.05236442184525,
+      "lgb": 113.7400320075744,
+      "red": 16.312332414270855,
+      "rel": 12.542895691891648,
+      "profiles": 4515,
+      "systems": 46
+    },
+    {
+      "season": "SON",
+      "vendor": 69.77587819137942,
+      "lgb": 55.707037164735,
+      "red": 14.06884102664442,
+      "rel": 20.162900691922182,
+      "profiles": 4431,
+      "systems": 47
+    }
+  ],
+  "regimes": {
+    "Issued daily energy": {
+      "gain": [
+        1.906,
+        3.875,
+        6.397,
+        57.075
+      ],
+      "relative": [
+        19.7,
+        18.4,
+        18.2,
+        17.0
+      ]
+    },
+    "Maximum issued ramp": {
+      "gain": [
+        1.86,
+        3.796,
+        5.786,
+        57.81
+      ],
+      "relative": [
+        21.0,
+        18.7,
+        17.4,
+        17.0
+      ]
+    }
+  },
+  "coverage": {
+    "raw_all": 0.8260928561582466,
+    "cal_all": 0.9146736508374113,
+    "raw_active": 0.7699294630953823,
+    "cal_active": 0.8868820749000121,
+    "cal_active_step_min": 0.8142532221379833,
+    "cal_active_step_max": 0.9884642112578179,
+    "cal_active_steps_below_085": 27,
+    "active_steps_counted": 96
+  },
+  "foundation_shared": {
+    "rows": 584160,
+    "profiles": 6085,
+    "systems": 47,
+    "first_issue": "2016-07-01",
+    "last_issue": "2017-10-29",
+    "methods": [
+      {
+        "method": "Vendor",
+        "median_mae_kwh": 94.2823887053645
+      },
+      {
+        "method": "Residual LightGBM, point",
+        "median_mae_kwh": 86.60450864894544
+      },
+      {
+        "method": "Residual LightGBM quantiles, raw",
+        "median_mae_kwh": 85.83270963353961,
+        "mean_pinball_kwh": 30.982619715555938,
+        "wis_kwh": 69.27137416899014,
+        "grid_crps_kwh": 61.61263601496786,
+        "coverage_90": 0.8425979183785264,
+        "width_90_kwh": 224.67235977489025
+      },
+      {
+        "method": "Residual LightGBM quantiles, calibrated",
+        "median_mae_kwh": 84.26218855605795,
+        "mean_pinball_kwh": 29.5814673406006,
+        "wis_kwh": 66.86403536640194,
+        "grid_crps_kwh": 59.40397045456537,
+        "coverage_90": 0.9154016023007395,
+        "width_90_kwh": 316.8058598212414
+      },
+      {
+        "method": "Chronos-2 with vendor covariates",
+        "median_mae_kwh": 82.41322571864399,
+        "mean_pinball_kwh": 29.92315617755102,
+        "wis_kwh": 66.77695209760809,
+        "grid_crps_kwh": 59.37437322290256,
+        "coverage_90": 0.8631693371678992,
+        "width_90_kwh": 219.09795444360154
+      },
+      {
+        "method": "Chronos-2 using targets only",
+        "median_mae_kwh": 108.70595400050615,
+        "mean_pinball_kwh": 36.72872941789841,
+        "wis_kwh": 83.69158302538601,
+        "grid_crps_kwh": 74.31743482665192,
+        "coverage_90": 0.9365892906053136,
+        "width_90_kwh": 412.62074575289506
+      },
+      {
+        "method": "Moirai 2.0 using targets only",
+        "median_mae_kwh": 132.6957654663205,
+        "mean_pinball_kwh": 44.02445281733735,
+        "wis_kwh": 100.6912783781654,
+        "grid_crps_kwh": 89.45086325638557,
+        "coverage_90": 0.9410760750479321,
+        "width_90_kwh": 497.3745482169793
+      },
+      {
+        "method": "Moirai 2.0 with vendor covariates",
+        "median_mae_kwh": 166.3052307217042,
+        "mean_pinball_kwh": 55.862633561147085,
+        "wis_kwh": 127.77260550541293,
+        "grid_crps_kwh": 113.47084762251134,
+        "coverage_90": 0.9009432347302109,
+        "width_90_kwh": 523.1134506408443
+      }
+    ]
+  }
+}

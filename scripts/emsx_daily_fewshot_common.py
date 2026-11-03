@@ -7,6 +7,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from emsx_probabilistic import wis_rows
 
 from emsx_daily_curve_common import FORECAST_COLUMNS, TARGET_COLUMNS
 
@@ -142,13 +143,7 @@ def score_predictions(frame: pd.DataFrame) -> dict:
     losses = np.column_stack(
         [pinball(target, quantiles[:, index], q) for index, q in enumerate(QUANTILES)]
     )
-    interval_terms = []
-    for alpha, lower_col, upper_col in ((.8, 1, 9), (.6, 2, 8), (.4, 3, 7), (.2, 4, 6)):
-        interval_terms.append(
-            (alpha / 2.0)
-            * interval_score(target, quantiles[:, lower_col], quantiles[:, upper_col], alpha)
-        )
-    wis = (0.5 * absolute_error + np.sum(interval_terms, axis=0)) / 4.5
+    wis = wis_rows(target, quantiles)
     is90 = interval_score(target, quantiles[:, 0], quantiles[:, 10], .1)
     crossings = raw_quantiles[:, :-1] > raw_quantiles[:, 1:]
     grid_integral = (

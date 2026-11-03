@@ -1,0 +1,357 @@
+{
+  "profiles_checked": 70,
+  "delivery_rows_checked": 6720,
+  "maximum_difference_kwh": 0.0,
+  "checks": [
+    {
+      "site_id": 1,
+      "issue_time": "2017-04-02 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 2,
+      "issue_time": "2017-05-13 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 3,
+      "issue_time": "2017-05-25 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 4,
+      "issue_time": "2017-04-26 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 5,
+      "issue_time": "2016-09-04 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 6,
+      "issue_time": "2016-10-31 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 7,
+      "issue_time": "2014-05-09 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 8,
+      "issue_time": "2016-11-04 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 9,
+      "issue_time": "2016-08-06 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 10,
+      "issue_time": "2017-04-28 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 11,
+      "issue_time": "2017-05-08 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 12,
+      "issue_time": "2017-05-02 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 13,
+      "issue_time": "2017-04-23 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 14,
+      "issue_time": "2016-03-30 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 15,
+      "issue_time": "2017-05-30 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 16,
+      "issue_time": "2017-04-26 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 17,
+      "issue_time": "2017-04-20 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 18,
+      "issue_time": "2017-05-27 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 19,
+      "issue_time": "2017-06-21 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 20,
+      "issue_time": "2017-06-20 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 21,
+      "issue_time": "2017-06-20 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 22,
+      "issue_time": "2017-06-19 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 23,
+      "issue_time": "2017-06-20 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 24,
+      "issue_time": "2017-06-15 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 25,
+      "issue_time": "2016-11-15 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 26,
+      "issue_time": "2016-11-19 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 27,
+      "issue_time": "2016-10-31 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 28,
+      "issue_time": "2016-08-23 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 29,
+      "issue_time": "2016-09-05 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 30,
+      "issue_time": "2016-11-17 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 31,
+      "issue_time": "2016-10-22 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 32,
+      "issue_time": "2016-08-22 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 33,
+      "issue_time": "2016-11-16 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 34,
+      "issue_time": "2016-10-19 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 35,
+      "issue_time": "2016-10-14 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 36,
+      "issue_time": "2016-10-19 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 37,
+      "issue_time": "2017-05-23 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 38,
+      "issue_time": "2017-06-30 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 39,
+      "issue_time": "2017-07-25 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 40,
+      "issue_time": "2017-06-30 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 41,
+      "issue_time": "2017-06-19 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 42,
+      "issue_time": "2017-06-17 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 43,
+      "issue_time": "2017-06-22 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 44,
+      "issue_time": "2017-06-25 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 45,
+      "issue_time": "2016-12-10 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 46,
+      "issue_time": "2017-04-29 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 47,
+      "issue_time": "2016-06-21 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 48,
+      "issue_time": "2016-06-22 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 49,
+      "issue_time": "2017-06-29 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 50,
+      "issue_time": "2017-06-23 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 51,
+      "issue_time": "2017-05-09 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 52,
+      "issue_time": "2017-07-17 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 53,
+      "issue_time": "2017-07-26 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 54,
+      "issue_time": "2017-07-08 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 55,
+      "issue_time": "2017-07-10 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 56,
+      "issue_time": "2016-10-30 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 57,
+      "issue_time": "2016-10-16 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 58,
+      "issue_time": "2016-10-15 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 59,
+      "issue_time": "2016-10-15 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 60,
+      "issue_time": "2017-07-29 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 61,
+      "issue_time": "2017-07-31 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 62,
+      "issue_time": "2017-03-29 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 63,
+      "issue_time": "2017-04-01 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 64,
+      "issue_time": "2017-06-02 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 65,
+      "issue_time": "2017-05-03 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 66,
+      "issue_time": "2017-05-08 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 67,
+      "issue_time": "2017-06-02 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 68,
+      "issue_time": "2017-05-26 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 69,
+      "issue_time": "2017-04-21 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    },
+    {
+      "site_id": 70,
+      "issue_time": "2017-04-23 00:00:00+00:00",
+      "max_absolute_difference_kwh": 0.0
+    }
+  ]
+}

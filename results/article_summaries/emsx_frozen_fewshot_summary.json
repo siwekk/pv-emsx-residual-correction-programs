@@ -30,16 +30,7 @@
         "seed_percentile_2_5": 68.50456082612179,
         "seed_percentile_97_5": 69.4538220442946
       },
-      "weighted_interval_score_kwh": {
-        "count": 32,
-        "mean": 70.73122810618841,
-        "standard_deviation": 0.23051177809419549,
-        "minimum": 70.3283421641692,
-        "median": 70.68384983410544,
-        "maximum": 71.33672536426458,
-        "seed_percentile_2_5": 70.35428895258273,
-        "seed_percentile_97_5": 71.2245019092685
-      },
+      "weighted_interval_score_kwh": null,
       "central_90_interval_coverage": {
         "count": 32,
         "mean": 0.9187340663405715,
@@ -51,7 +42,17 @@
         "seed_percentile_97_5": 0.92451409701802
       },
       "vendor_mae_kwh": 74.7559307169525,
-      "mean_improvement_over_vendor_kwh": -2.522312433666727
+      "mean_improvement_over_vendor_kwh": -2.522312433666727,
+      "legacy_invalid_weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 70.73122810618841,
+        "standard_deviation": 0.23051177809419549,
+        "minimum": 70.3283421641692,
+        "median": 70.68384983410544,
+        "maximum": 71.33672536426458,
+        "seed_percentile_2_5": 70.35428895258273,
+        "seed_percentile_97_5": 71.2245019092685
+      }
     },
     "chronos2/target_only/test": {
       "pooled_median_mae_kwh": {
@@ -74,16 +75,7 @@
         "seed_percentile_2_5": 68.85220366741791,
         "seed_percentile_97_5": 69.72231663721384
       },
-      "weighted_interval_score_kwh": {
-        "count": 32,
-        "mean": 73.56716785202687,
-        "standard_deviation": 0.2206456296822894,
-        "minimum": 73.14916454431835,
-        "median": 73.54765981510546,
-        "maximum": 74.27351996533767,
-        "seed_percentile_2_5": 73.17657903267983,
-        "seed_percentile_97_5": 73.98286603424745
-      },
+      "weighted_interval_score_kwh": null,
       "central_90_interval_coverage": {
         "count": 32,
         "mean": 0.9236752787377314,
@@ -95,7 +87,17 @@
         "seed_percentile_97_5": 0.9292295611841612
       },
       "vendor_mae_kwh": 71.33744083130635,
-      "mean_improvement_over_vendor_kwh": -6.940724720569634
+      "mean_improvement_over_vendor_kwh": -6.940724720569634,
+      "legacy_invalid_weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 73.56716785202687,
+        "standard_deviation": 0.2206456296822894,
+        "minimum": 73.14916454431835,
+        "median": 73.54765981510546,
+        "maximum": 74.27351996533767,
+        "seed_percentile_2_5": 73.17657903267983,
+        "seed_percentile_97_5": 73.98286603424745
+      }
     },
     "chronos2/vendor_covariate/calibration": {
       "pooled_median_mae_kwh": {
@@ -118,16 +120,7 @@
         "seed_percentile_2_5": 44.690970526953016,
         "seed_percentile_97_5": 45.28285984622997
       },
-      "weighted_interval_score_kwh": {
-        "count": 32,
-        "mean": 46.789885411395645,
-        "standard_deviation": 0.24177117295094094,
-        "minimum": 46.42333766432552,
-        "median": 46.774729928895084,
-        "maximum": 47.381824284008175,
-        "seed_percentile_2_5": 46.480305728047874,
-        "seed_percentile_97_5": 47.340413968243
-      },
+      "weighted_interval_score_kwh": null,
       "central_90_interval_coverage": {
         "count": 32,
         "mean": 0.8925508816821233,
@@ -139,7 +132,17 @@
         "seed_percentile_97_5": 0.9040256493628892
       },
       "vendor_mae_kwh": 74.7559307169525,
-      "mean_improvement_over_vendor_kwh": 25.54551252611401
+      "mean_improvement_over_vendor_kwh": 25.54551252611401,
+      "legacy_invalid_weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 46.789885411395645,
+        "standard_deviation": 0.24177117295094094,
+        "minimum": 46.42333766432552,
+        "median": 46.774729928895084,
+        "maximum": 47.381824284008175,
+        "seed_percentile_2_5": 46.480305728047874,
+        "seed_percentile_97_5": 47.340413968243
+      }
     },
     "chronos2/vendor_covariate/test": {
       "pooled_median_mae_kwh": {
@@ -162,16 +165,7 @@
         "seed_percentile_2_5": 53.96905380088257,
         "seed_percentile_97_5": 54.31788190131091
       },
-      "weighted_interval_score_kwh": {
-        "count": 32,
-        "mean": 57.96117231347696,
-        "standard_deviation": 0.15521531731554333,
-        "minimum": 57.67826538595746,
-        "median": 57.942306750900656,
-        "maximum": 58.390712145700604,
-        "seed_percentile_2_5": 57.710169602519805,
-        "seed_percentile_97_5": 58.30229751593507
-      },
+      "weighted_interval_score_kwh": null,
       "central_90_interval_coverage": {
         "count": 32,
         "mean": 0.905493890246872,
@@ -183,7 +177,17 @@
         "seed_percentile_97_5": 0.9159477551135087
       },
       "vendor_mae_kwh": 71.33744083130635,
-      "mean_improvement_over_vendor_kwh": 9.996798712058279
+      "mean_improvement_over_vendor_kwh": 9.996798712058279,
+      "legacy_invalid_weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 57.96117231347696,
+        "standard_deviation": 0.15521531731554333,
+        "minimum": 57.67826538595746,
+        "median": 57.942306750900656,
+        "maximum": 58.390712145700604,
+        "seed_percentile_2_5": 57.710169602519805,
+        "seed_percentile_97_5": 58.30229751593507
+      }
     },
     "moirai2/target_only/calibration": {
       "pooled_median_mae_kwh": {
@@ -206,16 +210,7 @@
         "seed_percentile_2_5": 67.12316932742674,
         "seed_percentile_97_5": 71.60798092990751
       },
-      "weighted_interval_score_kwh": {
-        "count": 32,
-        "mean": 71.49804674358683,
-        "standard_deviation": 1.3087410429545883,
-        "minimum": 69.30985519953715,
-        "median": 71.45088907860736,
-        "maximum": 75.38686703407127,
-        "seed_percentile_2_5": 69.39876853968254,
-        "seed_percentile_97_5": 74.05266078511006
-      },
+      "weighted_interval_score_kwh": null,
       "central_90_interval_coverage": {
         "count": 32,
         "mean": 0.8524216953413633,
@@ -227,7 +222,17 @@
         "seed_percentile_97_5": 0.8811968681670813
       },
       "vendor_mae_kwh": 74.7559307169525,
-      "mean_improvement_over_vendor_kwh": -2.0989147905609826
+      "mean_improvement_over_vendor_kwh": -2.0989147905609826,
+      "legacy_invalid_weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 71.49804674358683,
+        "standard_deviation": 1.3087410429545883,
+        "minimum": 69.30985519953715,
+        "median": 71.45088907860736,
+        "maximum": 75.38686703407127,
+        "seed_percentile_2_5": 69.39876853968254,
+        "seed_percentile_97_5": 74.05266078511006
+      }
     },
     "moirai2/target_only/test": {
       "pooled_median_mae_kwh": {
@@ -250,16 +255,7 @@
         "seed_percentile_2_5": 74.04363845753747,
         "seed_percentile_97_5": 82.935816872077
       },
-      "weighted_interval_score_kwh": {
-        "count": 32,
-        "mean": 81.33250784738243,
-        "standard_deviation": 2.151974089858328,
-        "minimum": 76.77799273098255,
-        "median": 81.15360262125071,
-        "maximum": 85.05181560525527,
-        "seed_percentile_2_5": 77.29647518035001,
-        "seed_percentile_97_5": 84.68338685099907
-      },
+      "weighted_interval_score_kwh": null,
       "central_90_interval_coverage": {
         "count": 32,
         "mean": 0.8797703179436389,
@@ -271,7 +267,17 @@
         "seed_percentile_97_5": 0.9034761147167902
       },
       "vendor_mae_kwh": 71.33744083130635,
-      "mean_improvement_over_vendor_kwh": -17.504009426074518
+      "mean_improvement_over_vendor_kwh": -17.504009426074518,
+      "legacy_invalid_weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 81.33250784738243,
+        "standard_deviation": 2.151974089858328,
+        "minimum": 76.77799273098255,
+        "median": 81.15360262125071,
+        "maximum": 85.05181560525527,
+        "seed_percentile_2_5": 77.29647518035001,
+        "seed_percentile_97_5": 84.68338685099907
+      }
     },
     "moirai2/vendor_covariate/calibration": {
       "pooled_median_mae_kwh": {
@@ -294,16 +300,7 @@
         "seed_percentile_2_5": 70.27692893230115,
         "seed_percentile_97_5": 75.49010270553934
       },
-      "weighted_interval_score_kwh": {
-        "count": 32,
-        "mean": 75.60485912259887,
-        "standard_deviation": 1.5361709032472004,
-        "minimum": 73.22906482602997,
-        "median": 75.58901768040357,
-        "maximum": 78.36726983840661,
-        "seed_percentile_2_5": 73.33463874860496,
-        "seed_percentile_97_5": 78.09100435813797
-      },
+      "weighted_interval_score_kwh": null,
       "central_90_interval_coverage": {
         "count": 32,
         "mean": 0.8578203637468899,
@@ -315,7 +312,17 @@
         "seed_percentile_97_5": 0.9244178471122672
       },
       "vendor_mae_kwh": 74.7559307169525,
-      "mean_improvement_over_vendor_kwh": -6.377071918749365
+      "mean_improvement_over_vendor_kwh": -6.377071918749365,
+      "legacy_invalid_weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 75.60485912259887,
+        "standard_deviation": 1.5361709032472004,
+        "minimum": 73.22906482602997,
+        "median": 75.58901768040357,
+        "maximum": 78.36726983840661,
+        "seed_percentile_2_5": 73.33463874860496,
+        "seed_percentile_97_5": 78.09100435813797
+      }
     },
     "moirai2/vendor_covariate/test": {
       "pooled_median_mae_kwh": {
@@ -338,16 +345,7 @@
         "seed_percentile_2_5": 74.4154976338223,
         "seed_percentile_97_5": 83.78104837776213
       },
-      "weighted_interval_score_kwh": {
-        "count": 32,
-        "mean": 81.49557702239983,
-        "standard_deviation": 1.8832574132830808,
-        "minimum": 78.57519835470906,
-        "median": 81.39544324898418,
-        "maximum": 87.33874682311885,
-        "seed_percentile_2_5": 78.94991278074907,
-        "seed_percentile_97_5": 86.4484425310136
-      },
+      "weighted_interval_score_kwh": null,
       "central_90_interval_coverage": {
         "count": 32,
         "mean": 0.8728033745879225,
@@ -359,8 +357,54 @@
         "seed_percentile_97_5": 0.9302949632876302
       },
       "vendor_mae_kwh": 71.33744083130635,
-      "mean_improvement_over_vendor_kwh": -16.228608105014004
+      "mean_improvement_over_vendor_kwh": -16.228608105014004,
+      "legacy_invalid_weighted_interval_score_kwh": {
+        "count": 32,
+        "mean": 81.49557702239983,
+        "standard_deviation": 1.8832574132830808,
+        "minimum": 78.57519835470906,
+        "median": 81.39544324898418,
+        "maximum": 87.33874682311885,
+        "seed_percentile_2_5": 78.94991278074907,
+        "seed_percentile_97_5": 86.4484425310136
+      }
     }
   },
-  "interpretation": "Seed percentiles describe variation across random initializations and training batches. They are not confidence intervals for unseen sites or future periods. The original test period informed configuration selection; calibration did not."
+  "interpretation": "Seed percentiles describe variation across random initializations and training batches. They are not confidence intervals for unseen sites or future periods. The original test period informed configuration selection; calibration did not.",
+  "wis_migration_version": "wis4-corrected-20261101",
+  "wis_migration": [
+    {
+      "field": "aggregate/chronos2/target_only/calibration/weighted_interval_score_kwh",
+      "status": "withdrawn_full_predictions_required"
+    },
+    {
+      "field": "aggregate/chronos2/target_only/test/weighted_interval_score_kwh",
+      "status": "withdrawn_full_predictions_required"
+    },
+    {
+      "field": "aggregate/chronos2/vendor_covariate/calibration/weighted_interval_score_kwh",
+      "status": "withdrawn_full_predictions_required"
+    },
+    {
+      "field": "aggregate/chronos2/vendor_covariate/test/weighted_interval_score_kwh",
+      "status": "withdrawn_full_predictions_required"
+    },
+    {
+      "field": "aggregate/moirai2/target_only/calibration/weighted_interval_score_kwh",
+      "status": "withdrawn_full_predictions_required"
+    },
+    {
+      "field": "aggregate/moirai2/target_only/test/weighted_interval_score_kwh",
+      "status": "withdrawn_full_predictions_required"
+    },
+    {
+      "field": "aggregate/moirai2/vendor_covariate/calibration/weighted_interval_score_kwh",
+      "status": "withdrawn_full_predictions_required"
+    },
+    {
+      "field": "aggregate/moirai2/vendor_covariate/test/weighted_interval_score_kwh",
+      "status": "withdrawn_full_predictions_required"
+    }
+  ],
+  "evaluation_note": "Original partitions have staggered dates across systems; use results/round1 for the common calendar validation."
 }

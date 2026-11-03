@@ -16,6 +16,7 @@ import pandas as pd
 
 from analyse_emsx_foundation_step_errors import QUANTILE_COLUMNS, step_error
 from emsx_daily_fewshot_common import score_predictions
+from emsx_probabilistic import normalize_saved_metrics
 
 
 KEYS = ["site_id", "issue_time", "valid_time", "delivery_step"]
@@ -25,7 +26,8 @@ METRICS = (
 )
 
 
-def compare_saved(frame: pd.DataFrame, saved: dict, identifier: str) -> None:
+def compare_saved(frame: pd.DataFrame, saved: dict, identifier: str) -> dict:
+    saved = normalize_saved_metrics(saved)
     recalculated = score_predictions(frame)
     for key, value in saved.items():
         if not np.isclose(recalculated[key], value, rtol=1e-9, atol=1e-9):
@@ -34,6 +36,7 @@ def compare_saved(frame: pd.DataFrame, saved: dict, identifier: str) -> None:
         raise RuntimeError(f"{identifier}: nonfinite deliveries")
     if frame.duplicated(KEYS).any():
         raise RuntimeError(f"{identifier}: duplicate delivery keys")
+    return recalculated
 
 
 def main() -> None:
@@ -66,7 +69,7 @@ def main() -> None:
                 path = new_predictions / f"{identifier}_{partition}.parquet"
                 frame = pd.read_parquet(path)
                 saved = result["metrics"][partition]
-                compare_saved(frame, saved, f"{identifier}/{partition}")
+                saved = compare_saved(frame, saved, f"{identifier}/{partition}")
                 baseline_path = frozen_predictions / (
                     f"{baseline_id}.parquet" if partition == "calibration"
                     else f"{baseline_id}_test.parquet"

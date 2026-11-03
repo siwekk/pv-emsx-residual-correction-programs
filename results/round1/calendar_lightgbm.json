@@ -1,0 +1,152 @@
+{
+  "sample": {
+    "calendar_cutoffs_utc": [
+      "2016-01-01 00:00:00+00:00",
+      "2016-04-01 00:00:00+00:00",
+      "2016-07-01 00:00:00+00:00"
+    ],
+    "systems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      45,
+      46,
+      47,
+      48,
+      51,
+      56,
+      57,
+      58,
+      59,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70
+    ],
+    "profiles": {
+      "calibration": 3947,
+      "test": 14509,
+      "train": 8047,
+      "tuning": 4053
+    },
+    "selection": "At least 30 complete training profiles and 7 in each later partition; no outcome score used for eligibility.",
+    "scale": "Per-system 99.5th target percentile in common-calendar training only.",
+    "latest_fit_delivery": "2016-04-01 00:00:00+00:00"
+  },
+  "trials": [
+    {
+      "num_leaves": 63,
+      "min_child_samples": 300,
+      "learning_rate": 0.04,
+      "iterations": 999,
+      "tuning_mae_kwh": 43.3517849300413
+    },
+    {
+      "num_leaves": 127,
+      "min_child_samples": 200,
+      "learning_rate": 0.03,
+      "iterations": 952,
+      "tuning_mae_kwh": 39.831813225854205
+    },
+    {
+      "num_leaves": 255,
+      "min_child_samples": 100,
+      "learning_rate": 0.02,
+      "iterations": 995,
+      "tuning_mae_kwh": 40.87303276129951
+    }
+  ],
+  "selected": {
+    "num_leaves": 127,
+    "min_child_samples": 200,
+    "learning_rate": 0.03,
+    "iterations": 952,
+    "tuning_mae_kwh": 39.831813225854205
+  },
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "lightgbm": "4.6.0",
+  "created_utc": "2026-11-01T19:55:23.471349+00:00",
+  "calibration": {
+    "lightgbm": {
+      "mae_kwh": 74.99818437930504,
+      "system_averaged_mae_kwh": 69.46987126414687,
+      "normalized_mae": 0.05881554548191328,
+      "rows": 378912
+    },
+    "vendor": {
+      "mae_kwh": 95.42414093017578,
+      "system_averaged_mae_kwh": 88.44784545898438,
+      "normalized_mae": 0.07508405297994614,
+      "rows": 378912
+    },
+    "seasonal_naive": {
+      "mae_kwh": 133.7744140625,
+      "system_averaged_mae_kwh": 123.99893951416016,
+      "normalized_mae": 0.10533702373504639,
+      "rows": 378912
+    },
+    "persistence": {
+      "mae_kwh": 312.8666076660156,
+      "system_averaged_mae_kwh": 289.9736633300781,
+      "normalized_mae": 0.24619434773921967,
+      "rows": 378912
+    }
+  },
+  "test": {
+    "lightgbm": {
+      "mae_kwh": 83.25553379957697,
+      "system_averaged_mae_kwh": 66.76662978046241,
+      "normalized_mae": 0.05565491003041344,
+      "rows": 1392864
+    },
+    "vendor": {
+      "mae_kwh": 100.56763458251953,
+      "system_averaged_mae_kwh": 81.1448745727539,
+      "normalized_mae": 0.06768285483121872,
+      "rows": 1392864
+    },
+    "seasonal_naive": {
+      "mae_kwh": 123.17253875732422,
+      "system_averaged_mae_kwh": 98.54032135009766,
+      "normalized_mae": 0.08215171098709106,
+      "rows": 1392864
+    },
+    "persistence": {
+      "mae_kwh": 318.8641357421875,
+      "system_averaged_mae_kwh": 256.8577575683594,
+      "normalized_mae": 0.21533796191215515,
+      "rows": 1392864
+    }
+  }
+}

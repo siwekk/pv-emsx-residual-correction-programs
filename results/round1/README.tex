@@ -1,0 +1,27 @@
+\section*{Common calendar results}
+
+These aggregate results correspond to the configuration
+\texttt{protocols/emsx\_round1\_calendar\_20261101.json}. Training is before
+January 1, 2016, tuning is from January through March, calibration is from April
+through June, and test begins on July 1. The 47 retained systems contribute
+8,047 training, 4,053 tuning, 3,947 calibration, and 14,509 test profiles, each
+containing 96 deliveries.
+
+The LightGBM, neural, and quantile JSON files record the selected settings,
+every neural seed, and both evaluation periods. The CSV comparison and PDF
+figure summarize the point experiment. The bootstrap JSON reports the
+system average improvement and its descriptive resampling interval.
+\texttt{audit.json} and \texttt{partition\_dates\_by\_system.csv} describe the
+original staggered partitions and corrected original quantile scores.
+
+All new WIS values follow \texttt{wis4-corrected-20261101}. The raw and adjusted
+test WIS values are 66.7964523979251 and 64.44064906883375 kWh. These results are
+distinct from the original retrospective comparison, whose corrected raw and
+adjusted WIS values are 43.52830497937603 and 40.39838110371623 kWh.
+
+The saved forecasts and model weights are not included in this repository.
+They are regenerated outside it by the programs. \texttt{verify\_round1.py}
+checks these aggregates by default and checks the full forecasts when their
+external directory is supplied. Original adapted foundation model WIS summaries
+remain withdrawn until their component scores or full forecasts are recovered;
+no missing seed scores are estimated from aggregate means.

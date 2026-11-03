@@ -1,0 +1,17 @@
+{
+  "original_calculation_program_sha256": {
+    "audit_revision.py": "22fb1b49c0646c6b1e702ad1a0443f5000c566e3a1cf6907ef0120bbde2e2a64",
+    "calendar_validation.py": "2eb8c3b8e7b316b4166fd31e1672d2db029de986f88484472988c4bd642210fb",
+    "calendar_quantiles.py": "b523d1de0c6b6c0451a62e456bc199d4e516d74242654a8d9d8f5ebc5cefe2af",
+    "check_calibration.py": "4e97d07835cb4266af785f160068d7c762ddbe2d82a5e68d27b52a1269dd98ef"
+  },
+  "portable_program_sha256": {
+    "audit_revision.py": "111d4eaf1919d33abfc152ac0384db2f7fdd0d9f11c3be70ce49ae7ed3c19a3f",
+    "calendar_validation.py": "f2178f9f5eebc4a542679c260b257b1cdb2464c519c08e385e118211fb2535a7",
+    "calendar_quantiles.py": "b1eaac16537f9abd62de264dfa924c8ba7eb7cff96c225888ba75534e4a3ccaf",
+    "check_calibration.py": "3292e137bf436f6ca2fbe7a78f471544594c6e439f58939bfc244173dc68e4d4"
+  },
+  "note": "The original calculations used local paths. Portable programs preserve fitting settings and scoring contracts; saved prediction verification is recorded separately. All 11 unit tests passed, and the portable common calendar preparation exactly matched the saved cohort metadata. Models were not retrained during packaging.",
+  "unit_tests_passed": 11,
+  "common_calendar_metadata_match": true
+}

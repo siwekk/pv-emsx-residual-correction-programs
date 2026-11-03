@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "scoring_version": "wis4-corrected-20261101",
+  "neural_runs": 6,
+  "systems": 47,
+  "test_deliveries": 1392864,
+  "prediction_partitions_checked": [
+    "calibration",
+    "test"
+  ],
+  "mode": "full_saved_prediction_check",
+  "point_tolerance_kwh": 0.001
+}

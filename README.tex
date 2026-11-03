@@ -1,0 +1,162 @@
+\section*{EMSx programs, revision of November 1, 2026}
+
+This repository contains calculation programs, experiment configurations, tests,
+and selected aggregate results for probabilistic correction of issued photovoltaic
+forecasts. The current revision is \texttt{round1-2026-11-01}. The manuscript,
+reviewer comments, response letter, raw measurements, full prediction arrays, and
+trained model weights are excluded. The EMSx source data are available at
+\url{https://doi.org/10.5281/zenodo.5510400}.
+
+\section*{What changed}
+
+The original WIS implementation paired interval bounds with reversed miscoverage
+levels. All four scoring entry points now use one shared implementation in
+\texttt{scripts/emsx\_probabilistic.py}. It uses the median and central intervals
+covering 20, 40, 60, and 80 percent, with miscoverage levels 0.8, 0.6, 0.4, and 0.2,
+respectively. The standard weights are described by Bracher et al.,
+\url{https://doi.org/10.1371/journal.pcbi.1008618}. The outer interval covering
+90 percent is evaluated separately. Tests independently check the equivalence
+with the nine inner pinball losses.
+
+Recoverable historical WIS values have been corrected. Values that cannot be
+reconstructed from the retained aggregates are null in JSON or empty in CSV,
+with their earlier numbers preserved under names beginning with
+\texttt{legacy\_invalid\_}. Those earlier numbers are not valid WIS results.
+\texttt{results/SCORING\_CORRECTIONS.json} records the changes. Complete original
+run records containing unrounded pinball loss and the outer interval score can
+recover WIS without retraining; the summary and verification programs apply
+that identity. Aggregate means alone cannot recover missing seed variation.
+
+The original partitions are chronological within each system but have overlap
+across systems during global fitting. They therefore remain retrospective
+comparisons. The new calendar experiment uses common cutoffs on January 1,
+April 1, and July 1, 2016. Eligibility leaves 47 systems and 1,392,864 test
+deliveries. The point comparison includes LightGBM, Transformer, BiLSTM, vendor,
+seasonal naive, and persistence forecasts. All three neural seeds are retained.
+LightGBM refits on training and tuning, while neural models retain training
+checkpoints selected on tuning, so the budgets differ.
+
+The quantile check reuses the common point tuning settings, the existing eleven
+quantiles, and the window of 30 days. This check was added after inspection of
+the point comparison, without selecting settings on quantile test outcomes.
+Foundation adaptation has not been repeated under these common calendar cutoffs.
+The original adaptation settings used original test outcomes and remain exploratory.
+
+\section*{Environment and data}
+
+Run commands from the repository directory, with inputs and newly computed
+outputs in an external working directory. Python 3.12 was used. Install
+\texttt{requirements-round1.txt} in a dedicated environment for the new experiments.
+The original \texttt{requirements.txt} and the separate Chronos and Moirai
+requirements remain available for the historical experiments. Their environments
+should not be combined. Package versions and configuration values are recorded
+in \texttt{results/round1/software\_versions.json} and
+\texttt{protocols/emsx\_round1\_calendar\_20261101.json}.
+
+The following shell commands show the data setup on Linux. Replace the example
+working directory before running them.
+
+\begin{verbatim}
+export EMSX_WORK_ROOT=/absolute/path/to/emsx-work
+python3 -m venv "$EMSX_WORK_ROOT/.venv-round1"
+source "$EMSX_WORK_ROOT/.venv-round1/bin/activate"
+python -m pip install -r requirements-round1.txt
+python scripts/download_emsx.py
+python scripts/build_emsx_daily_curves.py \
+  --raw-root "$EMSX_WORK_ROOT/data/raw/emsx" \
+  --output-root "$EMSX_WORK_ROOT/data/processed/emsx/daily_curves" \
+  --manifest "$EMSX_WORK_ROOT/results/daily_profiles.json"
+\end{verbatim}
+
+On Windows, set \texttt{EMSX\_WORK\_ROOT} in PowerShell and invoke the Python
+executable from the environment for every command. Activation is optional.
+
+\begin{verbatim}
+$env:EMSX_WORK_ROOT = 'C:\EMSx-work'
+python -m venv "$env:EMSX_WORK_ROOT\.venv-round1"
+$emsxPython = "$env:EMSX_WORK_ROOT\.venv-round1\Scripts\python.exe"
+& $emsxPython -m pip install -r requirements-round1.txt
+\end{verbatim}
+
+By default, prepared profiles are read from the working directory under
+\texttt{data/processed/emsx/daily\_curves}, and new outputs go under
+\texttt{round1}. Optional environment variables \texttt{EMSX\_CURVE\_ROOT},
+\texttt{EMSX\_PREDICTION\_ROOT}, and \texttt{EMSX\_ROUND1\_ROOT} override these
+locations. None depends on the author's manuscript directory or server paths.
+
+\section*{Repeat the calendar experiment}
+
+Use the environment's Python executable in the following commands. LightGBM
+must finish before the quantile experiment reads its selected settings, and all
+six neural fits must finish before the combined summary is generated.
+
+\begin{verbatim}
+python scripts/calendar_validation.py --model lightgbm
+python scripts/calendar_validation.py --model neural
+python scripts/calendar_quantiles.py
+python scripts/analyse_emsx_calendar.py
+python scripts/verify_round1.py \
+  --prediction-root "$EMSX_WORK_ROOT/round1/results" \
+  --output "$EMSX_WORK_ROOT/round1/verification.json"
+\end{verbatim}
+
+Training and prediction can take substantial time on a CPU. The published
+programs retain the calculation settings used for the saved results. Their
+portable paths, output handling, and scoring code were checked against the
+saved predictions; packaging did not retrain every model. Floating point and
+training results can vary with platform and numerical libraries. The verifier
+uses a tolerance of 0.001 kWh for point summaries and a stricter tolerance for
+the quantile scores.
+
+\section*{Check results without training}
+
+The bundled summaries can be checked without downloading models or running
+training. The first command below checks aggregate consistency, not full
+predictions. Supplying the external prediction directory enables checks of
+both partitions, every neural seed, matched delivery keys, finite values,
+and recalculated scores.
+
+\begin{verbatim}
+python scripts/verify_round1.py
+python -m unittest discover -s tests -v
+python scripts/check_distribution.py
+\end{verbatim}
+
+The optional \texttt{EMSX\_TEST\_TMP} variable selects a writable directory for
+temporary test files when the default temporary directory is unavailable.
+
+\texttt{scripts/audit\_revision.py} reproduces the chronology audit and corrected
+scores from the original prediction files. \texttt{scripts/check\_calibration.py}
+checks the causal offsets at the first original test issue of each system.
+These programs need the original prepared profiles and prediction files in the
+external working directory. The original inference programs regenerate those
+files when the EMSx data and required model checkpoints are available.
+
+\section*{Included numerical results}
+
+\texttt{results/round1} contains the common calendar experiment, numerical audit,
+sample dates, software versions, and comparison figure. Vendor test MAE is
+100.57 kWh, compared with 83.26 kWh for residual LightGBM, 89.35 kWh for BiLSTM,
+and 90.66 kWh for the Transformer. The latter two are means across three seeds.
+Rolling calibration changes WIS from 66.80 to 64.44 kWh and interval coverage
+from 0.826 to 0.915, with wider intervals. Original sample results remain in the
+other result directories, with the scoring corrections clearly recorded.
+
+The repository does not establish transfer to other vendors or climate zones.
+The calendar experiment reuses EMSx records examined during study development
+and is not a prospective replication. The bootstrap resamples systems and daily
+profiles rather than preserving dependence across successive days.
+
+\section*{Second revision, November 2, 2026}
+
+Version \texttt{round2-2026-11-02} adds the programs of the additional analyses
+of the second revision. \texttt{scripts/round2\_compute.py} runs the leakage
+comparison, the feature ablation, the ridge references, the cross-system error
+feature, the transfer to systems excluded from fitting, and the block bootstrap.
+\texttt{scripts/round2\_overlap\_check.py} and \texttt{scripts/round2\_drift\_check.py}
+check the overlap of the partitions and the drift of the number of systems.
+\texttt{scripts/round2\_restore\_analyses.py} recomputes the regime, season, and
+reliability analyses on the common calendar test period. The selected LightGBM
+settings and seeds are fixed in the programs. Aggregate numerical summaries are in
+\texttt{results/round2}. The prediction arrays and the source data are not stored
+here. The first revision remains identified by the tag \texttt{round1-2026-11-01}.

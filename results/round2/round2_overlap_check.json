@@ -1,0 +1,32 @@
+{
+  "before_fit_end": {
+    "rows": 343488,
+    "profiles": 3578,
+    "systems": 47,
+    "vendor_mae_kwh": 80.34598878260415,
+    "original_lightgbm_mae_kwh": 37.44630393905496,
+    "calendar_lightgbm_mae_kwh": 70.21508712062464,
+    "original_reduction_percent": 53.393685849862216,
+    "calendar_reduction_percent": 12.609094511726227
+  },
+  "after_fit_end": {
+    "rows": 240672,
+    "profiles": 2507,
+    "systems": 23,
+    "vendor_mae_kwh": 114.17247204147795,
+    "original_lightgbm_mae_kwh": 110.17130529120105,
+    "calendar_lightgbm_mae_kwh": 109.99555381381649,
+    "original_reduction_percent": 3.504493402598219,
+    "calendar_reduction_percent": 3.658428474898945
+  },
+  "all": {
+    "rows": 584160,
+    "profiles": 6085,
+    "systems": 47,
+    "vendor_mae_kwh": 94.2823887053645,
+    "original_lightgbm_mae_kwh": 67.40876546573206,
+    "calendar_lightgbm_mae_kwh": 86.60450864894544,
+    "original_reduction_percent": 28.503333028200394,
+    "calendar_reduction_percent": 8.14349335209641
+  }
+}

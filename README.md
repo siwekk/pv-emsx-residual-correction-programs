@@ -1,3 +1,7 @@
+Current revision: round2-2026-11-02. Read README.tex for the corrected WIS definition, common calendar experiments, verification commands, and current result status. UPLOAD.tex explains how to publish the prepared local update.
+
+The sections below describe the original experiment package. Those original system partitions have temporal overlap across systems during global fitting. Legacy WIS values have now been corrected or marked as withdrawn; results in results/round1 describe the additional common calendar validation.
+
 ## The paper
 
 **Probabilistic Residual Correction of Issued Photovoltaic Forecast Profiles without Plant Metadata**

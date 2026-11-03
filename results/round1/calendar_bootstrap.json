@@ -1,0 +1,12 @@
+{
+  "estimand": "equal-system mean vendor MAE minus LightGBM MAE; systems then daily profiles resampled",
+  "seed": 20261101,
+  "replicates": 2000,
+  "estimate_kwh": 14.378247051894183,
+  "limits_95_kwh": [
+    4.298880059972026,
+    33.6607095778755
+  ],
+  "systems_improved": 47,
+  "systems": 47
+}
